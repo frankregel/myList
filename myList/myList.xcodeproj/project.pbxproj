@@ -19,6 +19,17 @@
 		77BE15CA18AE03340010B72D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77BE15B218AE03340010B72D /* UIKit.framework */; };
 		77BE15D218AE03350010B72D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77BE15D018AE03350010B72D /* InfoPlist.strings */; };
 		77BE15D418AE03350010B72D /* myListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BE15D318AE03350010B72D /* myListTests.m */; };
+		77BE15E518AE128A0010B72D /* BaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BE15E418AE128A0010B72D /* BaseListViewController.m */; };
+		77BE15E818AE12B10010B72D /* MyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BE15E718AE12B10010B72D /* MyListViewController.m */; };
+		77BE15EB18AE12D50010B72D /* ListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BE15EA18AE12D50010B72D /* ListDetailViewController.m */; };
+		77BE15F118AE22090010B72D /* MyListDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BE15F018AE22090010B72D /* MyListDelegate.m */; };
+		77BE15F418AE2D1A0010B72D /* MyRecommendedListDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BE15F318AE2D1A0010B72D /* MyRecommendedListDelegate.m */; };
+		77BE15F618AE3FFD0010B72D /* headerPic.png in Resources */ = {isa = PBXBuildFile; fileRef = 77BE15F518AE3FFD0010B72D /* headerPic.png */; };
+		77BE15F918AE41900010B72D /* TableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BE15F818AE41900010B72D /* TableHeaderView.m */; };
+		77BE15FC18AE50AD0010B72D /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BE15FB18AE50AD0010B72D /* ListModel.m */; };
+		77BE15FF18AE50D60010B72D /* ItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BE15FE18AE50D60010B72D /* ItemModel.m */; };
+		77BE160218AE50EF0010B72D /* LocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BE160118AE50EF0010B72D /* LocationModel.m */; };
+		77BE160518AE5D230010B72D /* DataSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BE160418AE5D230010B72D /* DataSourceManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +59,27 @@
 		77BE15CF18AE03350010B72D /* myListTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "myListTests-Info.plist"; sourceTree = "<group>"; };
 		77BE15D118AE03350010B72D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		77BE15D318AE03350010B72D /* myListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myListTests.m; sourceTree = "<group>"; };
+		77BE15E318AE128A0010B72D /* BaseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseListViewController.h; path = Base/BaseListViewController.h; sourceTree = "<group>"; };
+		77BE15E418AE128A0010B72D /* BaseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseListViewController.m; path = Base/BaseListViewController.m; sourceTree = "<group>"; };
+		77BE15E618AE12B10010B72D /* MyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyListViewController.h; path = Lists/MyListViewController.h; sourceTree = "<group>"; };
+		77BE15E718AE12B10010B72D /* MyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyListViewController.m; path = Lists/MyListViewController.m; sourceTree = "<group>"; };
+		77BE15E918AE12D50010B72D /* ListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListDetailViewController.h; path = Lists/ListDetailViewController.h; sourceTree = "<group>"; };
+		77BE15EA18AE12D50010B72D /* ListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListDetailViewController.m; path = Lists/ListDetailViewController.m; sourceTree = "<group>"; };
+		77BE15EF18AE22090010B72D /* MyListDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyListDelegate.h; path = Lists/Manager/MyListDelegate.h; sourceTree = "<group>"; };
+		77BE15F018AE22090010B72D /* MyListDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyListDelegate.m; path = Lists/Manager/MyListDelegate.m; sourceTree = "<group>"; };
+		77BE15F218AE2D1A0010B72D /* MyRecommendedListDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyRecommendedListDelegate.h; path = Lists/Manager/MyRecommendedListDelegate.h; sourceTree = "<group>"; };
+		77BE15F318AE2D1A0010B72D /* MyRecommendedListDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyRecommendedListDelegate.m; path = Lists/Manager/MyRecommendedListDelegate.m; sourceTree = "<group>"; };
+		77BE15F518AE3FFD0010B72D /* headerPic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headerPic.png; sourceTree = "<group>"; };
+		77BE15F718AE41900010B72D /* TableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableHeaderView.h; path = View/TableHeaderView.h; sourceTree = "<group>"; };
+		77BE15F818AE41900010B72D /* TableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableHeaderView.m; path = View/TableHeaderView.m; sourceTree = "<group>"; };
+		77BE15FA18AE50AD0010B72D /* ListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListModel.h; path = Core/Model/ListModel.h; sourceTree = "<group>"; };
+		77BE15FB18AE50AD0010B72D /* ListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListModel.m; path = Core/Model/ListModel.m; sourceTree = "<group>"; };
+		77BE15FD18AE50D60010B72D /* ItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemModel.h; path = Core/Model/ItemModel.h; sourceTree = "<group>"; };
+		77BE15FE18AE50D60010B72D /* ItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemModel.m; path = Core/Model/ItemModel.m; sourceTree = "<group>"; };
+		77BE160018AE50EF0010B72D /* LocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationModel.h; path = Core/Model/LocationModel.h; sourceTree = "<group>"; };
+		77BE160118AE50EF0010B72D /* LocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationModel.m; path = Core/Model/LocationModel.m; sourceTree = "<group>"; };
+		77BE160318AE5D230010B72D /* DataSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSourceManager.h; path = Manager/DataSourceManager.h; sourceTree = "<group>"; };
+		77BE160418AE5D230010B72D /* DataSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataSourceManager.m; path = Manager/DataSourceManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +139,11 @@
 		77BE15B418AE03340010B72D /* myList */ = {
 			isa = PBXGroup;
 			children = (
-				77BE15BD18AE03340010B72D /* AppDelegate.h */,
-				77BE15BE18AE03340010B72D /* AppDelegate.m */,
+				77BE15F518AE3FFD0010B72D /* headerPic.png */,
+				77BE15E218AE12460010B72D /* Base */,
+				77BE15E118AE10F90010B72D /* Lists */,
+				77BE15DE18AE10550010B72D /* Core */,
+				77BE15DD18AE103D0010B72D /* Main */,
 				77BE15C018AE03340010B72D /* Images.xcassets */,
 				77BE15B518AE03340010B72D /* Supporting Files */,
 			);
@@ -142,6 +177,96 @@
 				77BE15D018AE03350010B72D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		77BE15DD18AE103D0010B72D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				77BE15BD18AE03340010B72D /* AppDelegate.h */,
+				77BE15BE18AE03340010B72D /* AppDelegate.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		77BE15DE18AE10550010B72D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				77BE15E018AE10970010B72D /* Manager */,
+				77BE15DF18AE108E0010B72D /* Model */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		77BE15DF18AE108E0010B72D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				77BE15FA18AE50AD0010B72D /* ListModel.h */,
+				77BE15FB18AE50AD0010B72D /* ListModel.m */,
+				77BE15FD18AE50D60010B72D /* ItemModel.h */,
+				77BE15FE18AE50D60010B72D /* ItemModel.m */,
+				77BE160018AE50EF0010B72D /* LocationModel.h */,
+				77BE160118AE50EF0010B72D /* LocationModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		77BE15E018AE10970010B72D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				77BE160318AE5D230010B72D /* DataSourceManager.h */,
+				77BE160418AE5D230010B72D /* DataSourceManager.m */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		77BE15E118AE10F90010B72D /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				77BE15EE18AE21CF0010B72D /* Manager */,
+				77BE15E618AE12B10010B72D /* MyListViewController.h */,
+				77BE15E718AE12B10010B72D /* MyListViewController.m */,
+				77BE15E918AE12D50010B72D /* ListDetailViewController.h */,
+				77BE15EA18AE12D50010B72D /* ListDetailViewController.m */,
+			);
+			name = Lists;
+			sourceTree = "<group>";
+		};
+		77BE15E218AE12460010B72D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				77BE15ED18AE1FF80010B72D /* ViewController */,
+				77BE15EC18AE1FDE0010B72D /* View */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		77BE15EC18AE1FDE0010B72D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77BE15F718AE41900010B72D /* TableHeaderView.h */,
+				77BE15F818AE41900010B72D /* TableHeaderView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		77BE15ED18AE1FF80010B72D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				77BE15E318AE128A0010B72D /* BaseListViewController.h */,
+				77BE15E418AE128A0010B72D /* BaseListViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		77BE15EE18AE21CF0010B72D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				77BE15EF18AE22090010B72D /* MyListDelegate.h */,
+				77BE15F018AE22090010B72D /* MyListDelegate.m */,
+				77BE15F218AE2D1A0010B72D /* MyRecommendedListDelegate.h */,
+				77BE15F318AE2D1A0010B72D /* MyRecommendedListDelegate.m */,
+			);
+			name = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +346,7 @@
 			files = (
 				77BE15B918AE03340010B72D /* InfoPlist.strings in Resources */,
 				77BE15C118AE03340010B72D /* Images.xcassets in Resources */,
+				77BE15F618AE3FFD0010B72D /* headerPic.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,8 +365,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77BE15F918AE41900010B72D /* TableHeaderView.m in Sources */,
 				77BE15BF18AE03340010B72D /* AppDelegate.m in Sources */,
+				77BE15F418AE2D1A0010B72D /* MyRecommendedListDelegate.m in Sources */,
+				77BE15E518AE128A0010B72D /* BaseListViewController.m in Sources */,
+				77BE15E818AE12B10010B72D /* MyListViewController.m in Sources */,
+				77BE15EB18AE12D50010B72D /* ListDetailViewController.m in Sources */,
+				77BE15FF18AE50D60010B72D /* ItemModel.m in Sources */,
+				77BE15FC18AE50AD0010B72D /* ListModel.m in Sources */,
+				77BE160518AE5D230010B72D /* DataSourceManager.m in Sources */,
+				77BE15F118AE22090010B72D /* MyListDelegate.m in Sources */,
 				77BE15BB18AE03340010B72D /* main.m in Sources */,
+				77BE160218AE50EF0010B72D /* LocationModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

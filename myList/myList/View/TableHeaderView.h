@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  TableHeaderView.h
 //  myList
 //
 //  Created by Frank Regel on 14.02.14.
@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@interface TableHeaderView : UIView
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+- (void)setImageWith:(NSString *)imageNameString andName:(NSString *)labelNameString;
 
 @end
