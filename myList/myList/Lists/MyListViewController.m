@@ -26,13 +26,19 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        // Custom initialization
+        //nur zum Test
         self.view.backgroundColor = [UIColor blueColor];
-        self.myListTableView.delegate = [MyListDelegate sharedInstance];
-        self.myListTableView.dataSource = [MyListDelegate sharedInstance];
-        self.myRecommendationTableView.delegate = [MyRecommendedListDelegate sharedInstance];
-        self.myRecommendationTableView.dataSource = [MyRecommendedListDelegate sharedInstance];
-        [MyListDelegate sharedInstance].callBackDelegate = self;
+        //List Table myListTableView ist im BaseListViewController definiert.
+        self.myListTableView.delegate = [MyListDelegate myListInstance];
+        self.myListTableView.dataSource = [MyListDelegate myListInstance];
+        [MyListDelegate myListInstance].callBackDelegate = self;
+        
+        //RecList Table
+        self.myRecommendationTableView.delegate = [MyRecommendedListDelegate myRecListInstance];
+        self.myRecommendationTableView.dataSource = [MyRecommendedListDelegate myRecListInstance];
+        [MyRecommendedListDelegate myRecListInstance].callBackDelegate = self;
+        
+        //PushViewController
         _selectedListController = [ListDetailViewController new];
     }
     return self;
@@ -49,13 +55,17 @@
     [self.navigationController pushViewController:_selectedListController animated:YES];
 }
 
+#warning Hier noch anpassen für die richtigen source Daten!
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    MyListDelegate *singleTonListDelegate = [MyListDelegate sharedInstance];
-    DataSourceManager *singletonDataSource = [DataSourceManager sharedInstance];
-    NSArray *listItems = [singletonDataSource getLists];
-    [singleTonListDelegate setListArray:listItems];
+    MyListDelegate *myList = [MyListDelegate myListInstance];
+    MyRecommendedListDelegate *myRecList = [MyRecommendedListDelegate myRecListInstance];
+    
+    NSArray *listItems = [[DataSourceManager useDataMethod] getLists];
+    [myList fillListWith:listItems];
+    [myRecList fillListWith:listItems];
+   
     
     //[[MyListDelegate sharedInstance] setListArray:[[DataSourceManager sharedInstance] getLists]];
     

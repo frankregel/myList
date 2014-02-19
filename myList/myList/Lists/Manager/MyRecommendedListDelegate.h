@@ -7,7 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ListModel.h"
+
+@protocol MyRecListCallBack <NSObject>
+
+- (void) didSelectList:(ListModel *)selectedList;
+
+@end
+
 
 @interface MyRecommendedListDelegate : NSObject <UITableViewDelegate, UITableViewDataSource>
-+ (MyRecommendedListDelegate *)sharedInstance;
+
+@property id <MyRecListCallBack> callBackDelegate;
+
++ (MyRecommendedListDelegate *)myRecListInstance;
+- (void)fillListWith:(NSArray *)listArray;
+
 @end
+

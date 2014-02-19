@@ -15,19 +15,19 @@
 
 @implementation MyListDelegate
 
-+ (MyListDelegate *)sharedInstance
++ (MyListDelegate *)myListInstance
 {
     //define, that sharedInstance exist exact 1 time
-    static MyListDelegate *_sharedInstance = nil;
+    static MyListDelegate *_myListInstance = nil;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedInstance = [self new];
+        _myListInstance = [self new];
     });
-    return _sharedInstance;
+    return _myListInstance;
 }
 
-- (void)setListArray:(NSArray *)listArray
+- (void)fillListWith:(NSArray *)listArray
 {
     _listArray = listArray;
 }

@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface LocationModel : NSObject
+@interface LocationModel : NSObject <MKMapViewDelegate>
 
 @end

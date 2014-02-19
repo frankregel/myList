@@ -10,4 +10,24 @@
 
 @interface ItemModel : NSObject
 
+- (void)setItemName:(NSString *)itemName;
+
+- (NSString *)getItemName;
+
+- (void)setItemDescription:(NSString *)itemDescription;
+
+- (NSString *)getItemDescription;
+
+- (void)setItemYear:(NSDate *)itemYear;
+
+- (NSDate *)getItemYear;
+
+- (void)setItemRecommendedBy:(NSString *)itemRecommendedBy;
+
+- (NSString *)getItemRecommendedBy;
+
+- (void)setItemImage:(NSString *)itemImage;
+
+- (NSString *)getItemImage;
+
 @end

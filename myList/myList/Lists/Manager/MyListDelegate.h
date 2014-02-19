@@ -18,8 +18,8 @@
 
 @property id <MyListCallBack> callBackDelegate;
 
-+ (MyListDelegate *)sharedInstance;
-- (void)setListArray:(NSArray *)listArray;
++ (MyListDelegate *)myListInstance;
+- (void)fillListWith:(NSArray *)listArray;
 
 @end
 

@@ -9,29 +9,50 @@
 #import "MyRecommendedListDelegate.h"
 #import "TableHeaderView.h"
 
+@interface MyRecommendedListDelegate ()
+@property (nonatomic) NSArray *listArray;
+
+@end
+
 @implementation MyRecommendedListDelegate
 
-+ (MyRecommendedListDelegate *)sharedInstance
++ (MyRecommendedListDelegate *)myRecListInstance
 {
     //define, that sharedInstance exist exact 1 time
-    static MyRecommendedListDelegate *_sharedInstance = nil;
+    static MyRecommendedListDelegate *_myRecListInstance = nil;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedInstance = [self new];
+        _myRecListInstance = [self new];
     });
-    return _sharedInstance;
+    return _myRecListInstance;
+}
+
+- (void)fillListWith:(NSArray *)listArray
+{
+    _listArray = listArray;
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (_callBackDelegate)
+    {
+        ListModel *selectedList = [_listArray objectAtIndex:indexPath.row];
+        [_callBackDelegate didSelectList:selectedList];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    NSInteger rows = _listArray.count;
+    return rows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [UITableViewCell new];
-    cell.textLabel.text = @"RecView";
+    ListModel *selectedList = [_listArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = [selectedList getListName];
     return cell;
 }
 

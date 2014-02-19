@@ -11,8 +11,14 @@
 
 @interface DataSourceManager : NSObject
 
-+ (DataSourceManager *)sharedInstance;
+@property NSMutableArray *noteBookArray;
+
++ (DataSourceManager *)useDataMethod;
 
 - (NSArray *)getLists;
+-(NSArray*)loadDataFromWanWith:(NSString*)quellURL and:(NSString*)keyForObject;
+-(NSMutableArray*) getPicsFromWanWith:(NSString*)stringForKey inPostArray:(NSArray*)thumbNailArray;
+- (void)saveItemToFileWith:(NSString *)newItem andTimeStamp:(NSString *)uniqueTimeStamp;
+- (NSDictionary *)loadListDict;
 
 @end

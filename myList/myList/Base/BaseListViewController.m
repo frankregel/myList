@@ -29,14 +29,13 @@
     [super viewDidLoad];
     //init myListTable
     _myListTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 200) style:UITableViewStylePlain];
-    
     [self.view addSubview:_myListTableView];
     
     //init myRecTable
     CGFloat yPos = _myListTableView.frame.origin.y + _myListTableView.frame.size.height +10;
     _myRecommendationTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, yPos, self.view.bounds.size.width, 130)];
     [self.view addSubview:_myRecommendationTableView];
-	// Do any additional setup after loading the view.
+	
 }
 
 - (void)didReceiveMemoryWarning
