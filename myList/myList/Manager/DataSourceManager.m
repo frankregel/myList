@@ -8,9 +8,11 @@
 
 #import "DataSourceManager.h"
 #import "ListModel.h"
+#import "RecModel.h"
 
 @interface DataSourceManager ()
 @property NSArray *listArray;
+@property NSArray *recArray;
 @property NSArray *postArray;
 @property NSMutableArray *mutableImageArray;
 @property NSMutableDictionary *mutableListDict;
@@ -26,24 +28,41 @@
     self = [super init];
     if (self)
     {
-        ListModel *firstList = [ListModel new];
-        [firstList setListName:@"Erste Liste"];
-        
-        ListModel *secondList = [ListModel new];
-        [secondList setListName:@"Zweite Liste"];
-        
-        ListModel *thirdList = [ListModel new];
-        [thirdList setListName:@"Dritte Liste"];
-        
-        _listArray = @[firstList,secondList,thirdList];
-        
+        [self setTestData];
     }
     return self;
+}
+
+- (void)setTestData
+{
+    ListModel *firstList = [ListModel new];
+    [firstList setListName:@"Erste Liste"];
+    
+    ListModel *secondList = [ListModel new];
+    [secondList setListName:@"Zweite Liste"];
+    
+    ListModel *thirdList = [ListModel new];
+    [thirdList setListName:@"Dritte Liste"];
+    
+    _listArray = @[firstList,secondList,thirdList];
+    
+    RecModel *firstRec = [RecModel new];
+    firstRec.recName = @"Erste Rec";
+    RecModel *secondRec = [RecModel new];
+    secondRec.recName = @"Zweite Rec";
+    
+    _recArray = @[firstRec, secondRec];
+    
 }
 
 - (NSArray *)getLists
 {
     return _listArray;
+}
+
+- (NSArray *)getRecList
+{
+    return _recArray;
 }
 
 #pragma mark - Shared Instance aka Singleton

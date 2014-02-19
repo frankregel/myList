@@ -10,7 +10,7 @@
 #import "TableHeaderView.h"
 
 @interface MyRecommendedListDelegate ()
-@property (nonatomic) NSArray *listArray;
+@property (nonatomic) NSArray *recArray;
 
 @end
 
@@ -28,31 +28,32 @@
     return _myRecListInstance;
 }
 
-- (void)fillListWith:(NSArray *)listArray
+- (void)fillRecListWith:(NSArray *)recArray
 {
-    _listArray = listArray;
+    _recArray = recArray;
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_callBackDelegate)
+    if (_myRecListViewController)
     {
-        ListModel *selectedList = [_listArray objectAtIndex:indexPath.row];
-        [_callBackDelegate didSelectList:selectedList];
+        
+        RecModel *selectedRec = [_recArray objectAtIndex:indexPath.row];
+        [_myRecListViewController didSelectRecommendation:selectedRec];
     }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger rows = _listArray.count;
+    NSInteger rows = _recArray.count;
     return rows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [UITableViewCell new];
-    ListModel *selectedList = [_listArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [selectedList getListName];
+    RecModel *selectedRec = [_recArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = [selectedRec getRecName];
     return cell;
 }
 

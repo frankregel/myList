@@ -16,7 +16,7 @@
 
 @interface MyListDelegate : NSObject <UITableViewDelegate, UITableViewDataSource>
 
-@property id <MyListCallBack> callBackDelegate;
+@property id <MyListCallBack> myListViewController;
 
 + (MyListDelegate *)myListInstance;
 - (void)fillListWith:(NSArray *)listArray;

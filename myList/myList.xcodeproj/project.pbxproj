@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7742FB1318B4E66700D041CA /* RecModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7742FB1218B4E66700D041CA /* RecModel.m */; };
+		7742FB1618B4EC9100D041CA /* RecDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7742FB1518B4EC9100D041CA /* RecDetailViewController.m */; };
 		77BE15AF18AE03340010B72D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77BE15AE18AE03340010B72D /* Foundation.framework */; };
 		77BE15B118AE03340010B72D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77BE15B018AE03340010B72D /* CoreGraphics.framework */; };
 		77BE15B318AE03340010B72D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77BE15B218AE03340010B72D /* UIKit.framework */; };
@@ -43,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7742FB1118B4E66700D041CA /* RecModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecModel.h; path = Core/Model/RecModel.h; sourceTree = "<group>"; };
+		7742FB1218B4E66700D041CA /* RecModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecModel.m; path = Core/Model/RecModel.m; sourceTree = "<group>"; };
+		7742FB1418B4EC9100D041CA /* RecDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecDetailViewController.h; path = Lists/RecDetailViewController.h; sourceTree = "<group>"; };
+		7742FB1518B4EC9100D041CA /* RecDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecDetailViewController.m; path = Lists/RecDetailViewController.m; sourceTree = "<group>"; };
 		77BE15AB18AE03340010B72D /* myList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77BE15AE18AE03340010B72D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		77BE15B018AE03340010B72D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -206,6 +212,8 @@
 				77BE15FE18AE50D60010B72D /* ItemModel.m */,
 				77BE160018AE50EF0010B72D /* LocationModel.h */,
 				77BE160118AE50EF0010B72D /* LocationModel.m */,
+				7742FB1118B4E66700D041CA /* RecModel.h */,
+				7742FB1218B4E66700D041CA /* RecModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -227,6 +235,8 @@
 				77BE15E718AE12B10010B72D /* MyListViewController.m */,
 				77BE15E918AE12D50010B72D /* ListDetailViewController.h */,
 				77BE15EA18AE12D50010B72D /* ListDetailViewController.m */,
+				7742FB1418B4EC9100D041CA /* RecDetailViewController.h */,
+				7742FB1518B4EC9100D041CA /* RecDetailViewController.m */,
 			);
 			name = Lists;
 			sourceTree = "<group>";
@@ -365,7 +375,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7742FB1618B4EC9100D041CA /* RecDetailViewController.m in Sources */,
 				77BE15F918AE41900010B72D /* TableHeaderView.m in Sources */,
+				7742FB1318B4E66700D041CA /* RecModel.m in Sources */,
 				77BE15BF18AE03340010B72D /* AppDelegate.m in Sources */,
 				77BE15F418AE2D1A0010B72D /* MyRecommendedListDelegate.m in Sources */,
 				77BE15E518AE128A0010B72D /* BaseListViewController.m in Sources */,
@@ -577,6 +589,7 @@
 				77BE15D918AE03350010B72D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77BE15DA18AE03350010B72D /* Build configuration list for PBXNativeTarget "myListTests" */ = {
 			isa = XCConfigurationList;
@@ -585,6 +598,7 @@
 				77BE15DC18AE03350010B72D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

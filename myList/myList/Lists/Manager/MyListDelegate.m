@@ -34,10 +34,10 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_callBackDelegate)
+    if (_myListViewController)
     {
         ListModel *selectedList = [_listArray objectAtIndex:indexPath.row];
-        [_callBackDelegate didSelectList:selectedList];
+        [_myListViewController didSelectList:selectedList];
     }
 }
 
