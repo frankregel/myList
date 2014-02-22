@@ -26,7 +26,7 @@
         [self addSubview:_tableHeaderImageView];
         _tableHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, 270, 40)];
         [self addSubview:_tableHeaderLabel];
-        self.alpha = 0.5;
+        self.alpha = 0.7;
         // Initialization code
     }
     return self;

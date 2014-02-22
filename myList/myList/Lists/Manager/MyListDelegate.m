@@ -19,8 +19,8 @@
 {
     //define, that sharedInstance exist exact 1 time
     static MyListDelegate *_myListInstance = nil;
-    
     static dispatch_once_t onceToken;
+    
     dispatch_once(&onceToken, ^{
         _myListInstance = [self new];
     });
@@ -50,6 +50,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     UITableViewCell *cell = [UITableViewCell new];
     ListModel *selectedList = [_listArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [selectedList getListName];

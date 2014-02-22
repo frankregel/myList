@@ -11,6 +11,8 @@
 
 @interface ListDetailViewController : BaseListViewController
 
+
+
 - (void)setSelectedListWith:(ListModel *)selectedList;
 
 

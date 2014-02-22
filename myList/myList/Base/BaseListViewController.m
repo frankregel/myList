@@ -19,7 +19,34 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-
+        //set Name of the NavBar
+        self.navigationItem.title = @"myList";
+        //background
+        UIImage *baseListBackgroundImage = [UIImage imageNamed:@"altespapier.png"];
+        UIImageView *backgroundView = [[UIImageView alloc]initWithImage:baseListBackgroundImage];
+        [self.view addSubview:backgroundView];
+        //init myListTable
+        _myListTableView = [[UITableView alloc] initWithFrame:CGRectMake(5, 70, self.view.bounds.size.width -10, 130)];
+        
+#warning das hat erst im detailview Auswirkung???
+        [_myListTableView setBackgroundView:nil];
+        [_myListTableView setBackgroundColor:[UIColor clearColor]];
+        //[[_myListTableView backgroundView] setAlpha:0.0];
+        
+        [self.view addSubview:_myListTableView];
+        
+        //init myRecTable
+        CGFloat yPos = _myListTableView.frame.origin.y + _myListTableView.frame.size.height +10;
+        _myRecommendationTableView = [[UITableView alloc] initWithFrame:CGRectMake(5, yPos, self.view.bounds.size.width -10, 130)];
+        [self.view addSubview:_myRecommendationTableView];
+        
+        //init MapView
+        CGFloat myPos = self.view.bounds.size.height -135;
+        _myMapView = [[MKMapView alloc]initWithFrame:CGRectMake(5,myPos, self.view.bounds.size.width -10, 130)];
+        _myMapView.showsUserLocation = YES;
+        [self.view addSubview:_myMapView];
+        
+        
     }
     return self;
 }
@@ -27,14 +54,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //init myListTable
-    _myListTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 200) style:UITableViewStylePlain];
-    [self.view addSubview:_myListTableView];
-    
-    //init myRecTable
-    CGFloat yPos = _myListTableView.frame.origin.y + _myListTableView.frame.size.height +10;
-    _myRecommendationTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, yPos, self.view.bounds.size.width, 130)];
-    [self.view addSubview:_myRecommendationTableView];
+
 	
 }
 

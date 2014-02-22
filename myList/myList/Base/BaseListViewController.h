@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
+
 
 @interface BaseListViewController : UIViewController
 
 @property UITableView *myListTableView;
 @property UITableView *myRecommendationTableView;
+@property UITableView *myItemTableView;
+@property MKMapView *myMapView;
 
 @end

@@ -32,6 +32,11 @@
 		77BE15FF18AE50D60010B72D /* ItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BE15FE18AE50D60010B72D /* ItemModel.m */; };
 		77BE160218AE50EF0010B72D /* LocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BE160118AE50EF0010B72D /* LocationModel.m */; };
 		77BE160518AE5D230010B72D /* DataSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BE160418AE5D230010B72D /* DataSourceManager.m */; };
+		84145D2118B8A41E00F940CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84145D2018B8A41E00F940CF /* MapKit.framework */; };
+		84145D2318B8A43200F940CF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84145D2218B8A43200F940CF /* CoreLocation.framework */; };
+		84145D2518B8AC5D00F940CF /* altespapier.png in Resources */ = {isa = PBXBuildFile; fileRef = 84145D2418B8AC5D00F940CF /* altespapier.png */; };
+		84145D2818B8AFAA00F940CF /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84145D2718B8AFAA00F940CF /* ItemViewController.m */; };
+		84145D2E18B8BB2F00F940CF /* MyItemDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84145D2D18B8BB2F00F940CF /* MyItemDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +91,13 @@
 		77BE160118AE50EF0010B72D /* LocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationModel.m; path = Core/Model/LocationModel.m; sourceTree = "<group>"; };
 		77BE160318AE5D230010B72D /* DataSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSourceManager.h; path = Manager/DataSourceManager.h; sourceTree = "<group>"; };
 		77BE160418AE5D230010B72D /* DataSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataSourceManager.m; path = Manager/DataSourceManager.m; sourceTree = "<group>"; };
+		84145D2018B8A41E00F940CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		84145D2218B8A43200F940CF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		84145D2418B8AC5D00F940CF /* altespapier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = altespapier.png; sourceTree = "<group>"; };
+		84145D2618B8AFAA00F940CF /* ItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemViewController.h; path = Lists/ItemViewController.h; sourceTree = "<group>"; };
+		84145D2718B8AFAA00F940CF /* ItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemViewController.m; path = Lists/ItemViewController.m; sourceTree = "<group>"; };
+		84145D2C18B8BB2F00F940CF /* MyItemDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyItemDelegate.h; path = Lists/Manager/MyItemDelegate.h; sourceTree = "<group>"; };
+		84145D2D18B8BB2F00F940CF /* MyItemDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyItemDelegate.m; path = Lists/Manager/MyItemDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +105,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84145D2318B8A43200F940CF /* CoreLocation.framework in Frameworks */,
+				84145D2118B8A41E00F940CF /* MapKit.framework in Frameworks */,
 				77BE15B118AE03340010B72D /* CoreGraphics.framework in Frameworks */,
 				77BE15B318AE03340010B72D /* UIKit.framework in Frameworks */,
 				77BE15AF18AE03340010B72D /* Foundation.framework in Frameworks */,
@@ -134,6 +148,8 @@
 		77BE15AD18AE03340010B72D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84145D2218B8A43200F940CF /* CoreLocation.framework */,
+				84145D2018B8A41E00F940CF /* MapKit.framework */,
 				77BE15AE18AE03340010B72D /* Foundation.framework */,
 				77BE15B018AE03340010B72D /* CoreGraphics.framework */,
 				77BE15B218AE03340010B72D /* UIKit.framework */,
@@ -145,7 +161,7 @@
 		77BE15B418AE03340010B72D /* myList */ = {
 			isa = PBXGroup;
 			children = (
-				77BE15F518AE3FFD0010B72D /* headerPic.png */,
+				84145D1F18B893F300F940CF /* images */,
 				77BE15E218AE12460010B72D /* Base */,
 				77BE15E118AE10F90010B72D /* Lists */,
 				77BE15DE18AE10550010B72D /* Core */,
@@ -235,6 +251,8 @@
 				77BE15E718AE12B10010B72D /* MyListViewController.m */,
 				77BE15E918AE12D50010B72D /* ListDetailViewController.h */,
 				77BE15EA18AE12D50010B72D /* ListDetailViewController.m */,
+				84145D2618B8AFAA00F940CF /* ItemViewController.h */,
+				84145D2718B8AFAA00F940CF /* ItemViewController.m */,
 				7742FB1418B4EC9100D041CA /* RecDetailViewController.h */,
 				7742FB1518B4EC9100D041CA /* RecDetailViewController.m */,
 			);
@@ -275,8 +293,19 @@
 				77BE15F018AE22090010B72D /* MyListDelegate.m */,
 				77BE15F218AE2D1A0010B72D /* MyRecommendedListDelegate.h */,
 				77BE15F318AE2D1A0010B72D /* MyRecommendedListDelegate.m */,
+				84145D2C18B8BB2F00F940CF /* MyItemDelegate.h */,
+				84145D2D18B8BB2F00F940CF /* MyItemDelegate.m */,
 			);
 			name = Manager;
+			sourceTree = "<group>";
+		};
+		84145D1F18B893F300F940CF /* images */ = {
+			isa = PBXGroup;
+			children = (
+				84145D2418B8AC5D00F940CF /* altespapier.png */,
+				77BE15F518AE3FFD0010B72D /* headerPic.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84145D2518B8AC5D00F940CF /* altespapier.png in Resources */,
 				77BE15B918AE03340010B72D /* InfoPlist.strings in Resources */,
 				77BE15C118AE03340010B72D /* Images.xcassets in Resources */,
 				77BE15F618AE3FFD0010B72D /* headerPic.png in Resources */,
@@ -382,9 +412,11 @@
 				77BE15F418AE2D1A0010B72D /* MyRecommendedListDelegate.m in Sources */,
 				77BE15E518AE128A0010B72D /* BaseListViewController.m in Sources */,
 				77BE15E818AE12B10010B72D /* MyListViewController.m in Sources */,
+				84145D2818B8AFAA00F940CF /* ItemViewController.m in Sources */,
 				77BE15EB18AE12D50010B72D /* ListDetailViewController.m in Sources */,
 				77BE15FF18AE50D60010B72D /* ItemModel.m in Sources */,
 				77BE15FC18AE50AD0010B72D /* ListModel.m in Sources */,
+				84145D2E18B8BB2F00F940CF /* MyItemDelegate.m in Sources */,
 				77BE160518AE5D230010B72D /* DataSourceManager.m in Sources */,
 				77BE15F118AE22090010B72D /* MyListDelegate.m in Sources */,
 				77BE15BB18AE03340010B72D /* main.m in Sources */,
