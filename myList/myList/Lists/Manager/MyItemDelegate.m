@@ -35,9 +35,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (_myItemViewController)
     {
-        
         ItemModel *selectedItem = [_itemArray objectAtIndex:indexPath.row];
         [_myItemViewController didSelectItem:selectedItem];
     }
@@ -49,10 +49,11 @@
     return rows;
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [UITableViewCell new];
-    
+    cell.backgroundColor = [UIColor clearColor];
     ItemModel *selectedItem = [_itemArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [selectedItem getItemName];
     return cell;

@@ -34,6 +34,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (_myListViewController)
     {
         ListModel *selectedList = [_listArray objectAtIndex:indexPath.row];
@@ -45,6 +46,8 @@
 {
     
     UITableViewCell *cell = [UITableViewCell new];
+    //wenn die Zelle nicht durchsichtig ist, kann man den Hintergrunf nicht sehen!
+    cell.backgroundColor = [UIColor clearColor];
     ListModel *selectedList = [_listArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [selectedList getListName];
     return cell;

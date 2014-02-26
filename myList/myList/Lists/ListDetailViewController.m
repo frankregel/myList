@@ -11,7 +11,7 @@
 #import "MyItemDelegate.h"
 
 
-@interface ListDetailViewController () <MyItemCallBack, UINavigationControllerDelegate>
+@interface ListDetailViewController () <MyItemCallBack>
 @property ItemModel *selectedItem;
 @property ListModel *selectedList;
 @property ItemViewController *selectedItemController;
@@ -27,13 +27,20 @@
     if (self)
     {
         NSLog(@"%s", __PRETTY_FUNCTION__);
-        self.myItemTableView.delegate = [MyItemDelegate myItemInstance];
-        self.myItemTableView.dataSource = [MyItemDelegate myItemInstance];
+        
+#warning myList noch allgemein machen
+        //Tabelle 1 füllen
+        self.myListTableView.delegate = [MyItemDelegate myItemInstance];
+        self.myListTableView.dataSource = [MyItemDelegate myItemInstance];
+        //Tabelle 2 befüllen
+#warning hier noch die richtige Quelle referenzieren!
+        self.myRecommendationTableView.delegate = [MyItemDelegate myItemInstance];
+        self.myRecommendationTableView.dataSource = [MyItemDelegate myItemInstance];
+        
         [MyItemDelegate myItemInstance].myItemViewController = self;
         
-        NSLog(@"%s", __PRETTY_FUNCTION__);
         //pushViewController
-        _selectedItemController = [ItemViewController new];
+        //_selectedItemController = [ItemViewController new];
         
         
     }
@@ -45,9 +52,17 @@
     _selectedItem = selectedItem;
 }
 
+
+
 - (void)setSelectedListWith:(ListModel *)selectedList
 {
     _selectedList = selectedList;
+    self.title = [_selectedList getListName];
+    NSArray *tmpArray = [_selectedList getListItems];
+    //Daten übertragen
+    [[MyItemDelegate myItemInstance] fillItemListWith:tmpArray];
+    [self.myListTableView reloadData];
+    NSLog(@"%lu", (unsigned long)[tmpArray count]);
 }
 
 - (void)viewDidLoad

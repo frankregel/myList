@@ -11,5 +11,5 @@
 @interface TableHeaderView : UIView
 
 - (void)setImageWith:(NSString *)imageNameString andName:(NSString *)labelNameString;
-
+- (void)setHeaderStyleWithBorderWidth:(CGFloat)borderWidth andBorderColor:(UIColor *)borderColor andCornerRadius:(CGFloat)cornerRadius;
 @end

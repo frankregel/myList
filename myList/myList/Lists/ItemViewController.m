@@ -43,6 +43,7 @@
 - (void)setSelectedItemWith:(ItemModel *)selectedItem
 {
     _selectedItem = selectedItem;
+    self.title = [_selectedItem getItemName];
 }
 
 #pragma mark - Kamera konfigurieren

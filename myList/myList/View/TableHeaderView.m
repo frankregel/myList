@@ -7,6 +7,7 @@
 //
 
 #import "TableHeaderView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface TableHeaderView ()
 
@@ -32,13 +33,19 @@
     return self;
 }
 
+- (void)setHeaderStyleWithBorderWidth:(CGFloat)borderWidth andBorderColor:(UIColor *)borderColor andCornerRadius:(CGFloat)cornerRadius
+{
+    _tableHeaderLabel.layer.borderWidth = borderWidth;
+    _tableHeaderLabel.layer.borderColor = [borderColor CGColor];
+    _tableHeaderLabel.layer.cornerRadius = cornerRadius;
+
+}
+
 - (void)setImageWith:(NSString *)imageNameString andName:(NSString *)labelNameString
 {
     UIImage *tmpImage = [UIImage imageNamed:imageNameString];
     [_tableHeaderImageView setImage:tmpImage];
     [_tableHeaderLabel setText:labelNameString];
-    
-    
 }
 /*
 // Only override drawRect: if you perform custom drawing.

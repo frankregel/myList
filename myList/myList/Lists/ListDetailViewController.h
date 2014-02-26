@@ -15,5 +15,4 @@
 
 - (void)setSelectedListWith:(ListModel *)selectedList;
 
-
 @end

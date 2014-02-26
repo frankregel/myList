@@ -15,7 +15,6 @@
 
 @property UITableView *myListTableView;
 @property UITableView *myRecommendationTableView;
-@property UITableView *myItemTableView;
 @property MKMapView *myMapView;
 
 @end

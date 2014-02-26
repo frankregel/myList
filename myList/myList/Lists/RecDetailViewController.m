@@ -16,10 +16,13 @@
 
 @implementation RecDetailViewController
 
+#warning REC Delegate etc implementieren
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
+       //self.myListTableView.delegate =
         // Custom initialization
     }
     return self;
@@ -28,6 +31,7 @@
 - (void)setSelectedRecWith:(RecModel *)selectedRec
 {
     _selectedRec = selectedRec;
+    self.title = [_selectedRec getRecName];
 }
 
 - (void)viewDidLoad

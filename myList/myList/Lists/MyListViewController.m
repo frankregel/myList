@@ -11,14 +11,16 @@
 #import "MyListDelegate.h"
 #import "ListDetailViewController.h"
 #import "RecDetailViewController.h"
+#import "EditViewController.h"
 #import "DataSourceManager.h"
 #import "ListModel.h"
 #import "RecModel.h"
 
-@interface MyListViewController () <MyListCallBack, MyRecListCallBack, UINavigationControllerDelegate>
+@interface MyListViewController () <MyListCallBack, MyRecListCallBack>
 
 @property ListDetailViewController *selectedListController;
 @property RecDetailViewController *selectedRecController;
+@property EditViewController *editViewController;
 
 
 @end
@@ -48,12 +50,20 @@
         _selectedListController = [ListDetailViewController new];
         _selectedRecController = [RecDetailViewController new];
         
+        //Modale Controller
+        _editViewController = [[EditViewController alloc] initWithTitle:@"Neue Liste" andLeftButtonName:@"Fertig" andRightButtonName:@"Abbrechen"];
+        
     }
     return self;
 }
 
+#pragma mark - Neue Liste anlegen
 - (void)didCallNewList
 {
+    _editViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+    _editViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:_editViewController animated:YES completion:nil];
+    
     NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
@@ -67,7 +77,7 @@
 {
     [_selectedListController setSelectedListWith:selectedList];
     [self.navigationController pushViewController:_selectedListController animated:YES];
-    _selectedListController.title = [selectedList getListName];
+    
 }
 
 - (void)didSelectRecommendation:(RecModel *)selectedRecommendation
@@ -79,7 +89,6 @@
 {
     [_selectedRecController setSelectedRecWith:selectedRecommendation];
     [self.navigationController pushViewController:_selectedRecController animated:YES];
-    _selectedRecController.title = [selectedRecommendation getRecName];
 }
 
 

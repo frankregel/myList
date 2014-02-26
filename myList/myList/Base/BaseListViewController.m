@@ -28,16 +28,17 @@
         //init myListTable
         _myListTableView = [[UITableView alloc] initWithFrame:CGRectMake(5, 70, self.view.bounds.size.width -10, 130)];
         
-#warning das hat erst im detailview Auswirkung???
+        //Zellen auch auf durchsichtig setzen!
         [_myListTableView setBackgroundView:nil];
         [_myListTableView setBackgroundColor:[UIColor clearColor]];
-        //[[_myListTableView backgroundView] setAlpha:0.0];
         
         [self.view addSubview:_myListTableView];
         
         //init myRecTable
         CGFloat yPos = _myListTableView.frame.origin.y + _myListTableView.frame.size.height +10;
         _myRecommendationTableView = [[UITableView alloc] initWithFrame:CGRectMake(5, yPos, self.view.bounds.size.width -10, 130)];
+        [_myRecommendationTableView setBackgroundView:nil];
+        [_myRecommendationTableView setBackgroundColor:[UIColor clearColor]];
         [self.view addSubview:_myRecommendationTableView];
         
         //init MapView

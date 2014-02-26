@@ -35,9 +35,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (_myRecListViewController)
     {
-        
         RecModel *selectedRec = [_recArray objectAtIndex:indexPath.row];
         [_myRecListViewController didSelectRecommendation:selectedRec];
     }
@@ -52,6 +52,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [UITableViewCell new];
+    cell.backgroundColor = [UIColor clearColor];
     RecModel *selectedRec = [_recArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [selectedRec getRecName];
     return cell;
@@ -70,7 +71,8 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     TableHeaderView *headerView = [TableHeaderView new];
-    [headerView setImageWith:@"headerPic.png" andName:@"Empfehlung"];
+    [headerView setHeaderStyleWithBorderWidth:2 andBorderColor:[UIColor blackColor] andCornerRadius:5];
+    
     
     return headerView;
     
