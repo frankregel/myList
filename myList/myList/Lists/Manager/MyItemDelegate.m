@@ -10,6 +10,7 @@
 
 @interface MyItemDelegate ()
 @property (nonatomic) NSArray *itemArray;
+@property (nonatomic) NSArray *listArray;
 
 
 @end
@@ -51,6 +52,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [UITableViewCell new];
+    
     ItemModel *selectedItem = [_itemArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [selectedItem getItemName];
     return cell;

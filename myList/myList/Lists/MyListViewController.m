@@ -31,6 +31,9 @@
     if (self)
     {
         NSLog(@"%s", __PRETTY_FUNCTION__);
+        //BarButtonItems
+        UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(didCallNewList)];
+        self.navigationItem.rightBarButtonItem = addButton;
         //List Table myListTableView ist im BaseListViewController definiert.
         self.myListTableView.delegate = [MyListDelegate myListInstance];
         self.myListTableView.dataSource = [MyListDelegate myListInstance];
@@ -49,7 +52,10 @@
     return self;
 }
 
-
+- (void)didCallNewList
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
 
 #pragma mark - Protokolle implemetieren
 - (void)didSelectList:(ListModel *)selectedList
@@ -61,6 +67,7 @@
 {
     [_selectedListController setSelectedListWith:selectedList];
     [self.navigationController pushViewController:_selectedListController animated:YES];
+    _selectedListController.title = [selectedList getListName];
 }
 
 - (void)didSelectRecommendation:(RecModel *)selectedRecommendation
@@ -72,6 +79,7 @@
 {
     [_selectedRecController setSelectedRecWith:selectedRecommendation];
     [self.navigationController pushViewController:_selectedRecController animated:YES];
+    _selectedRecController.title = [selectedRecommendation getRecName];
 }
 
 

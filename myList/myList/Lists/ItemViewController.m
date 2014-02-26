@@ -7,7 +7,10 @@
 //
 
 #import "ItemViewController.h"
+#import "MyItemDelegate.h"
+#import "DataSourceManager.h"
 
+#warning muss noch mit ListviewController verbunden werden
 @interface ItemViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property ItemModel *selectedItem;
@@ -77,6 +80,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //MyListDelegate *myList = [MyListDelegate myListInstance];
+    //MyRecommendedListDelegate *myRecList = [MyRecommendedListDelegate myRecListInstance];
+    
+#warning hier komm ich nicht weiter :-(
+    MyItemDelegate *myItems = [MyItemDelegate myItemInstance];
+    
+    NSArray *items = [[DataSourceManager useDataMethod] getLists];
+    NSArray *detail = [items objectAtIndex:0];
+    
+    [myItems fillItemListWith:detail];
+
+
 	// Do any additional setup after loading the view.
 }
 

@@ -40,14 +40,7 @@
         [_myListViewController didSelectList:selectedList];
     }
 }
-
-#pragma mark - table Standard Setting
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    NSInteger rows = _listArray.count;
-    return rows;
-}
-
+//Tabelle befüllen
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -56,6 +49,16 @@
     cell.textLabel.text = [selectedList getListName];
     return cell;
 }
+
+#pragma mark - table Standard Setting
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    NSInteger rows = _listArray.count;
+    return rows;
+}
+
+
+
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 0.0;

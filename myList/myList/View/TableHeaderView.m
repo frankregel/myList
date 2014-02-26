@@ -22,9 +22,9 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        _tableHeaderImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+        _tableHeaderImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 40)];
         [self addSubview:_tableHeaderImageView];
-        _tableHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, 270, 40)];
+        _tableHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 0, 270, 40)];
         [self addSubview:_tableHeaderLabel];
         self.alpha = 0.7;
         // Initialization code

@@ -9,10 +9,12 @@
 #import "DataSourceManager.h"
 #import "ListModel.h"
 #import "RecModel.h"
+#import "ItemModel.h"
 
 @interface DataSourceManager ()
 @property NSArray *listArray;
 @property NSArray *recArray;
+@property NSArray *itemArray;
 @property NSArray *postArray;
 @property NSMutableArray *mutableImageArray;
 @property NSMutableDictionary *mutableListDict;
@@ -53,6 +55,21 @@
     
     _recArray = @[firstRec, secondRec];
     
+    ItemModel *firstItem = [ItemModel new];
+    [firstItem setItemName:@"1st Item"];
+    ItemModel *secondItem = [ItemModel new];
+    [secondItem setItemName:@"2nd Item"];
+    ItemModel *thirdItem = [ItemModel new];
+    [thirdItem setItemName:@"3rd Item"];
+    ItemModel *fourthItem = [ItemModel new];
+    [fourthItem setItemName:@"4th Item"];
+    
+    _itemArray = @[firstItem,secondItem,thirdItem,fourthItem];
+    
+    [firstList setListItems:_itemArray];
+    [secondList setListItems:@[secondItem,thirdItem,fourthItem]];
+    [thirdList setListItems:@[thirdItem,fourthItem]];
+    
 }
 
 - (NSArray *)getLists
@@ -63,6 +80,11 @@
 - (NSArray *)getRecList
 {
     return _recArray;
+}
+
+- (NSArray *)getItems
+{
+    return _itemArray;
 }
 
 #pragma mark - Shared Instance aka Singleton

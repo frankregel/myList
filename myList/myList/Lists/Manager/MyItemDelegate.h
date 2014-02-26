@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ItemModel.h"
+#import "ListModel.h"
 
 @protocol MyItemCallBack <NSObject>
 
