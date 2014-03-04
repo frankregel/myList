@@ -57,9 +57,11 @@
     
     ItemModel *firstItem = [ItemModel new];
     [firstItem setItemName:@"1st Item"];
+    [firstItem setIsRecItemTo:YES];
     ItemModel *secondItem = [ItemModel new];
     [secondItem setItemName:@"2nd Item"];
     ItemModel *thirdItem = [ItemModel new];
+    [thirdItem setIsRecItemTo:YES];
     [thirdItem setItemName:@"3rd Item"];
     ItemModel *fourthItem = [ItemModel new];
     [fourthItem setItemName:@"4th Item"];
@@ -69,6 +71,20 @@
     [firstList setListItems:_itemArray];
     [secondList setListItems:@[secondItem,thirdItem,fourthItem]];
     [thirdList setListItems:@[thirdItem,fourthItem]];
+    
+    //Dem RecDetailview nur Items geben die das Flag isRecItem haben
+    NSMutableArray *tmpArray = [NSMutableArray new];
+    
+    for (ItemModel *tmp in _itemArray)
+    {
+        if ([tmp getIsRecItem] == YES)
+        {
+            [tmpArray addObject:tmp];
+        }
+    }
+    
+    [firstRec setRecItems:tmpArray];
+    
     
 }
 

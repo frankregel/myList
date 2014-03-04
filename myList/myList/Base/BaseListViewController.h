@@ -13,8 +13,8 @@
 
 @interface BaseListViewController : UIViewController
 
-@property UITableView *myListTableView;
-@property UITableView *myRecommendationTableView;
+@property UITableView *topTableView;
+@property UITableView *midTableView;
 @property MKMapView *myMapView;
 
 @end

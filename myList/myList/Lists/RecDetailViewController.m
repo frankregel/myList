@@ -7,10 +7,15 @@
 //
 
 #import "RecDetailViewController.h"
+#import "ItemViewController.h"
+#import "MyItemDelegate.h"
 
-@interface RecDetailViewController ()
 
+@interface RecDetailViewController () <MyItemCallBack>
+
+@property ItemModel *selectedItem;
 @property RecModel *selectedRec;
+@property ItemViewController *selectedItemController;
 
 @end
 
@@ -22,16 +27,29 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-       //self.myListTableView.delegate =
-        // Custom initialization
+        NSLog(@"%s", __PRETTY_FUNCTION__);
+        self.topTableView.delegate = [MyItemDelegate myItemInstance];
+        self.topTableView.dataSource = [MyItemDelegate myItemInstance];
+        [self.midTableView removeFromSuperview];
+        [MyItemDelegate myItemInstance].myItemViewController = self;
     }
     return self;
+}
+
+- (void)didSelectItem:(ItemModel *)selectedItem
+{
+    _selectedItem = selectedItem;
 }
 
 - (void)setSelectedRecWith:(RecModel *)selectedRec
 {
     _selectedRec = selectedRec;
     self.title = [_selectedRec getRecName];
+    NSArray *tmpArray = [_selectedRec getRecItems];
+    //Daten übertragen
+    [[MyItemDelegate myItemInstance] fillItemListWith:tmpArray];
+    [self.topTableView reloadData];
+    
 }
 
 - (void)viewDidLoad

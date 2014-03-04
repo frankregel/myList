@@ -28,14 +28,11 @@
     {
         NSLog(@"%s", __PRETTY_FUNCTION__);
         
-#warning myList noch allgemein machen
         //Tabelle 1 füllen
-        self.myListTableView.delegate = [MyItemDelegate myItemInstance];
-        self.myListTableView.dataSource = [MyItemDelegate myItemInstance];
+        self.topTableView.delegate = [MyItemDelegate myItemInstance];
+        self.topTableView.dataSource = [MyItemDelegate myItemInstance];
         //Tabelle 2 befüllen
-#warning hier noch die richtige Quelle referenzieren!
-        self.myRecommendationTableView.delegate = [MyItemDelegate myItemInstance];
-        self.myRecommendationTableView.dataSource = [MyItemDelegate myItemInstance];
+        [self.midTableView removeFromSuperview];
         
         [MyItemDelegate myItemInstance].myItemViewController = self;
         
@@ -61,7 +58,7 @@
     NSArray *tmpArray = [_selectedList getListItems];
     //Daten übertragen
     [[MyItemDelegate myItemInstance] fillItemListWith:tmpArray];
-    [self.myListTableView reloadData];
+    [self.topTableView reloadData];
     NSLog(@"%lu", (unsigned long)[tmpArray count]);
 }
 

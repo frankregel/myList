@@ -39,6 +39,8 @@
     if (_myRecListViewController)
     {
         RecModel *selectedRec = [_recArray objectAtIndex:indexPath.row];
+        NSLog(@"ausgewähltes Rec: %@", [selectedRec getRecName]);
+        
         [_myRecListViewController didSelectRecommendation:selectedRec];
     }
 }
@@ -63,15 +65,11 @@
     return 43.0;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return @"Empfehlung";
-}
-
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     TableHeaderView *headerView = [TableHeaderView new];
-    [headerView setHeaderStyleWithBorderWidth:2 andBorderColor:[UIColor blackColor] andCornerRadius:5];
+    [headerView setHeaderStyleWithBorderWidth:1 andBorderColor:[UIColor blackColor] andCornerRadius:0 andHeaderName:@"Empfehlungen"];
+    
     
     
     return headerView;

@@ -7,6 +7,7 @@
 //
 
 #import "BaseListViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface BaseListViewController ()
 
@@ -26,25 +27,35 @@
         UIImageView *backgroundView = [[UIImageView alloc]initWithImage:baseListBackgroundImage];
         [self.view addSubview:backgroundView];
         //init myListTable
-        _myListTableView = [[UITableView alloc] initWithFrame:CGRectMake(5, 70, self.view.bounds.size.width -10, 130)];
+        _topTableView = [[UITableView alloc] initWithFrame:CGRectMake(5, 70, self.view.bounds.size.width -10, 130)];
         
         //Zellen auch auf durchsichtig setzen!
-        [_myListTableView setBackgroundView:nil];
-        [_myListTableView setBackgroundColor:[UIColor clearColor]];
+        [_topTableView setBackgroundView:nil];
+        [_topTableView setBackgroundColor:[UIColor clearColor]];
+        _topTableView.layer.borderWidth = 1;
+        _topTableView.layer.borderColor = [[UIColor blackColor] CGColor];
+        _topTableView.layer.cornerRadius = 5;
         
-        [self.view addSubview:_myListTableView];
+        
+        [self.view addSubview:_topTableView];
         
         //init myRecTable
-        CGFloat yPos = _myListTableView.frame.origin.y + _myListTableView.frame.size.height +10;
-        _myRecommendationTableView = [[UITableView alloc] initWithFrame:CGRectMake(5, yPos, self.view.bounds.size.width -10, 130)];
-        [_myRecommendationTableView setBackgroundView:nil];
-        [_myRecommendationTableView setBackgroundColor:[UIColor clearColor]];
-        [self.view addSubview:_myRecommendationTableView];
+        CGFloat yPos = _topTableView.frame.origin.y + _topTableView.frame.size.height +10;
+        _midTableView = [[UITableView alloc] initWithFrame:CGRectMake(5, yPos, self.view.bounds.size.width -10, 130)];
+        [_midTableView setBackgroundView:nil];
+        [_midTableView setBackgroundColor:[UIColor clearColor]];
+        _midTableView.layer.borderWidth = 1;
+        _midTableView.layer.borderColor = [[UIColor blackColor] CGColor];
+        _midTableView.layer.cornerRadius = 5;
+        [self.view addSubview:_midTableView];
         
         //init MapView
         CGFloat myPos = self.view.bounds.size.height -135;
         _myMapView = [[MKMapView alloc]initWithFrame:CGRectMake(5,myPos, self.view.bounds.size.width -10, 130)];
         _myMapView.showsUserLocation = YES;
+        _myMapView.layer.borderWidth = 1;
+        _myMapView.layer.borderColor = [[UIColor blackColor] CGColor];
+        _myMapView.layer.cornerRadius = 5;
         [self.view addSubview:_myMapView];
         
         

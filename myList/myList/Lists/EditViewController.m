@@ -33,7 +33,9 @@
     return self;
 }
 
-#warning Fertig noch implementieren / speichern
+#pragma mark - Elemente darstellen
+
+
 - (void)addLeftButtonWithName:(NSString *)buttonName
 {
     UIButton *leftButton = [[UIButton alloc] initWithFrame:CGRectMake(5, 20, 90, 44)];
@@ -53,10 +55,6 @@
     [self.view addSubview:rightButton];
 }
 
-- (void)didTouchRightButton
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 
 - (void)addTitleLabelWithName:(NSString *)titleName
@@ -68,6 +66,17 @@
     [self.view addSubview:titleLabel];
 }
 
+#warning Fertig noch implementieren / speichern
+#pragma mark - actions
+- (void)didTouchRightButton
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)didTouchLeftButton
+{
+    NSLog(@"Noch nicht implementiert!");
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];

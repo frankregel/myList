@@ -25,7 +25,7 @@
     {
         _tableHeaderImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 40)];
         [self addSubview:_tableHeaderImageView];
-        _tableHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 0, 270, 40)];
+        _tableHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 310, 25)];
         [self addSubview:_tableHeaderLabel];
         self.alpha = 0.7;
         // Initialization code
@@ -33,11 +33,13 @@
     return self;
 }
 
-- (void)setHeaderStyleWithBorderWidth:(CGFloat)borderWidth andBorderColor:(UIColor *)borderColor andCornerRadius:(CGFloat)cornerRadius
+- (void)setHeaderStyleWithBorderWidth:(CGFloat)borderWidth andBorderColor:(UIColor *)borderColor andCornerRadius:(CGFloat)cornerRadius andHeaderName:(NSString *)headerName
 {
     _tableHeaderLabel.layer.borderWidth = borderWidth;
     _tableHeaderLabel.layer.borderColor = [borderColor CGColor];
     _tableHeaderLabel.layer.cornerRadius = cornerRadius;
+    [_tableHeaderLabel setText:headerName];
+    [_tableHeaderLabel setTextAlignment:NSTextAlignmentCenter];
 
 }
 

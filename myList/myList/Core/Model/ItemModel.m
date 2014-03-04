@@ -15,8 +15,8 @@
 @property (nonatomic) NSDate *itemYear;
 @property (nonatomic) NSString *itemRecommendedBy;
 @property (nonatomic) NSString *itemImage;
+@property (nonatomic) BOOL isRecItem;
 
-#warning und wie macht man das mit Image?
 
 @end
 
@@ -71,6 +71,16 @@
 - (NSString *)getItemImage
 {
     return _itemImage;
+}
+
+- (void)setIsRecItemTo:(BOOL)isRecItem
+{
+    _isRecItem = isRecItem;
+}
+
+- (BOOL)getIsRecItem
+{
+    return _isRecItem;
 }
 
 @end

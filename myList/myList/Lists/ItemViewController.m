@@ -81,10 +81,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //MyListDelegate *myList = [MyListDelegate myListInstance];
-    //MyRecommendedListDelegate *myRecList = [MyRecommendedListDelegate myRecListInstance];
-    
-#warning hier komm ich nicht weiter :-(
     MyItemDelegate *myItems = [MyItemDelegate myItemInstance];
     
     NSArray *items = [[DataSourceManager useDataMethod] getLists];
@@ -92,8 +88,6 @@
     
     [myItems fillItemListWith:detail];
 
-
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EditMetaDataView : UIView
+@interface EditMetaDataView : UIView <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @end

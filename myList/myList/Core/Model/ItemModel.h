@@ -30,4 +30,8 @@
 
 - (NSString *)getItemImage;
 
+- (void)setIsRecItemTo:(BOOL)isRecItem;
+
+- (BOOL)getIsRecItem;
+
 @end

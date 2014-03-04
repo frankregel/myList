@@ -37,13 +37,13 @@
         UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(didCallNewList)];
         self.navigationItem.rightBarButtonItem = addButton;
         //List Table myListTableView ist im BaseListViewController definiert.
-        self.myListTableView.delegate = [MyListDelegate myListInstance];
-        self.myListTableView.dataSource = [MyListDelegate myListInstance];
+        self.topTableView.delegate = [MyListDelegate myListInstance];
+        self.topTableView.dataSource = [MyListDelegate myListInstance];
         [MyListDelegate myListInstance].myListViewController = self;
         
         //RecList Table
-        self.myRecommendationTableView.delegate = [MyRecommendedListDelegate myRecListInstance];
-        self.myRecommendationTableView.dataSource = [MyRecommendedListDelegate myRecListInstance];
+        self.midTableView.delegate = [MyRecommendedListDelegate myRecListInstance];
+        self.midTableView.dataSource = [MyRecommendedListDelegate myRecListInstance];
         [MyRecommendedListDelegate myRecListInstance].myRecListViewController = self;
         
         //PushViewController
