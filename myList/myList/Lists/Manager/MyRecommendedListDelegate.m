@@ -68,7 +68,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     TableHeaderView *headerView = [TableHeaderView new];
-    [headerView setHeaderStyleWithBorderWidth:1 andBorderColor:[UIColor blackColor] andCornerRadius:0 andHeaderName:@"Empfehlungen"];
+    [headerView setHeaderStyleWithBorderWidth:1 andBorderColor:[UIColor blackColor] andCornerRadius:0 andHeaderName:NSLocalizedString(@"RecTitle", @"")];
     
     
     

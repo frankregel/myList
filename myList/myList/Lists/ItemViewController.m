@@ -10,7 +10,6 @@
 #import "MyItemDelegate.h"
 #import "DataSourceManager.h"
 
-#warning muss noch mit ListviewController verbunden werden
 @interface ItemViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property ItemModel *selectedItem;
@@ -25,6 +24,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
+        [self.topTableView removeFromSuperview];
+        [self.midTableView removeFromSuperview];
         NSLog(@"%s", __PRETTY_FUNCTION__);
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
         {
@@ -33,7 +34,7 @@
             _imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
             
             
-            [self setTitle:@"ItemViewController"];
+            
             [self addPhotoButtonItem];
         }
     }

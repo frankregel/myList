@@ -51,7 +51,7 @@
         _selectedRecController = [RecDetailViewController new];
         
         //Modale Controller
-        _editViewController = [[EditViewController alloc] initWithTitle:@"Neue Liste" andLeftButtonName:@"Fertig" andRightButtonName:@"Abbrechen"];
+        _editViewController = [[EditViewController alloc] initWithTitle:NSLocalizedString(@"NewList", @"") andLeftButtonName:NSLocalizedString(@"Done", @"") andRightButtonName:NSLocalizedString(@"Cancel",@"")];
         
     }
     return self;

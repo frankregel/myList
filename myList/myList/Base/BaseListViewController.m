@@ -20,6 +20,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
+
+        
         //set Name of the NavBar
         self.navigationItem.title = @"myList";
         //background

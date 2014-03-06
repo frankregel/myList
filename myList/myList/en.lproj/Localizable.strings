@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  myList
+
+  Created by Frank Regel on 05.03.14.
+  Copyright (c) 2014 Frank Regel. All rights reserved.
+*/
+
+"RecTitle" = "recommendation";
+"NewList" = "New List";
+"Done" = "Done";
+"Cancel" = "Cancel";

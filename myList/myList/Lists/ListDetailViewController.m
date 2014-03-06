@@ -12,9 +12,10 @@
 
 
 @interface ListDetailViewController () <MyItemCallBack>
-@property ItemModel *selectedItem;
+//@property ItemModel *selectedItem;
 @property ListModel *selectedList;
 @property ItemViewController *selectedItemController;
+@property MyItemDelegate *listDelegate;
 
 
 @end
@@ -27,17 +28,17 @@
     if (self)
     {
         NSLog(@"%s", __PRETTY_FUNCTION__);
+        _listDelegate = [MyItemDelegate new];
         
         //Tabelle 1 füllen
-        self.topTableView.delegate = [MyItemDelegate myItemInstance];
-        self.topTableView.dataSource = [MyItemDelegate myItemInstance];
+        self.topTableView.delegate = _listDelegate;
+        self.topTableView.dataSource = _listDelegate;
         //Tabelle 2 befüllen
         [self.midTableView removeFromSuperview];
-        
-        [MyItemDelegate myItemInstance].myItemViewController = self;
+        _listDelegate.myItemViewController = self;
         
         //pushViewController
-        //_selectedItemController = [ItemViewController new];
+        _selectedItemController = [ItemViewController new];
         
         
     }
@@ -46,7 +47,9 @@
 
 - (void)didSelectItem:(ItemModel *)selectedItem
 {
-    _selectedItem = selectedItem;
+    NSLog(@"didSelect von ListDetailViewController");
+    [_selectedItemController setSelectedItemWith:selectedItem];
+    [self.navigationController pushViewController:_selectedItemController animated:YES];
 }
 
 
@@ -57,7 +60,7 @@
     self.title = [_selectedList getListName];
     NSArray *tmpArray = [_selectedList getListItems];
     //Daten übertragen
-    [[MyItemDelegate myItemInstance] fillItemListWith:tmpArray];
+    [_listDelegate fillItemListWith:tmpArray];
     [self.topTableView reloadData];
     NSLog(@"%lu", (unsigned long)[tmpArray count]);
 }

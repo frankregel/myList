@@ -8,16 +8,18 @@
 
 #import "EditMetaDataView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "customTextfield.h"
+#import "BasePickerView.h"
 
 @interface EditMetaDataView ()
 
 @property UITextField *title;
 @property UIButton *country;
+@property (nonatomic)  NSString *countryString;
 @property UIButton *region;
 @property UIButton *city;
 @property NSArray *countries;
-@property NSString *currentCountry;
-@property UILabel *countryLabel;
+@property BasePickerView *basePicker;
 
 
 @end
@@ -30,23 +32,51 @@
     if (self)
     {
         _countries = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"countries" ofType:@"plist"]];
+        
+        
+        
         [self addTextfieldWithName:@" neue Liste"];
         [self addCountryPicker];
         [self addRegionPicker];
         [self addCityPicker];
+        _basePicker = [[BasePickerView alloc] initWithFrame:CGRectMake(0, 70, 320, 180)];
+        _basePicker.hidden = YES;
+        [self addSubview:_basePicker];
+        //[_basePicker addTarget:self action:@selector(setCountryString:)];
+        //SAG BESCHEID DASS DU EMPÄNGST
+        _basePicker.empfaenger = self;
+        
+        //[_basePicker setEmpfaenger:self];
         
     }
     return self;
 }
 
+- (void)didTouchRightButton:(NSString *)currentValue
+{
+    [self setCountryString:currentValue];
+}
+
+- (void)setCountryString:(NSString *)countryString
+{
+    _countryString = countryString;
+    [_country setTitle:countryString forState:UIControlStateNormal];
+    _basePicker.hidden = YES;
+}
+
+- (void)callCountryPicker
+{
+    [_basePicker setDatasourceWith:_countries];
+    _basePicker.hidden = NO;
+}
 
 - (void)addTextfieldWithName:(NSString *)listName
 {
-    _title = [[UITextField alloc] initWithFrame:CGRectMake(0, 20, self.frame.size.width, 44)];
+    
+    _title = [[customTextfield alloc] initWithFrame:CGRectMake(0, 20, self.frame.size.width, 44)];
     [_title setTextColor:[UIColor blackColor]];
     
     _title.placeholder = listName;
-#warning wie richtet man das ordentlich aus?
     _title.layer.borderColor = [[UIColor grayColor] CGColor];
     _title.layer.borderWidth = 1;
     _title.layer.cornerRadius = 5;
@@ -58,6 +88,7 @@
     _country = [[UIButton alloc]initWithFrame:CGRectMake(0,70 , self.frame.size.width, 44)];
     [_country setTitle:@"Land" forState:UIControlStateNormal];
     [_country setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [_country addTarget:self action:@selector(callCountryPicker) forControlEvents:UIControlEventTouchUpInside];
     _country.layer.borderColor = [[UIColor grayColor] CGColor];
     _country.layer.borderWidth = 1;
     _country.layer.cornerRadius = 2;
@@ -88,24 +119,7 @@
 }
 
 
-#warning vorbereitet für Mittwoch
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    _currentCountry = [[self.countries objectAtIndex:row] objectForKey:@"code"];
-    _countryLabel.text = [[self.countries objectAtIndex:row] objectForKey:@"name"];
-}
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return _countries.count;
-}
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 2;
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [[_countries objectAtIndex:row] objectForKey:@"name"];
-}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

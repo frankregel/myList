@@ -16,29 +16,34 @@
 @property ItemModel *selectedItem;
 @property RecModel *selectedRec;
 @property ItemViewController *selectedItemController;
+@property MyItemDelegate *recDelegate;
 
 @end
 
 @implementation RecDetailViewController
 
-#warning REC Delegate etc implementieren
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
         NSLog(@"%s", __PRETTY_FUNCTION__);
-        self.topTableView.delegate = [MyItemDelegate myItemInstance];
-        self.topTableView.dataSource = [MyItemDelegate myItemInstance];
+        _recDelegate = [MyItemDelegate new];
+        self.topTableView.delegate = _recDelegate;
+        self.topTableView.dataSource = _recDelegate;
         [self.midTableView removeFromSuperview];
-        [MyItemDelegate myItemInstance].myItemViewController = self;
+        _recDelegate.myItemViewController = self;
+        //Instanzieren des SelctedItem
+        _selectedItemController = [ItemViewController new];
     }
     return self;
 }
 
 - (void)didSelectItem:(ItemModel *)selectedItem
 {
-    _selectedItem = selectedItem;
+    [_selectedItemController setSelectedItemWith:selectedItem];
+    [self.navigationController pushViewController:_selectedItemController animated:YES];
 }
 
 - (void)setSelectedRecWith:(RecModel *)selectedRec
@@ -47,7 +52,7 @@
     self.title = [_selectedRec getRecName];
     NSArray *tmpArray = [_selectedRec getRecItems];
     //Daten übertragen
-    [[MyItemDelegate myItemInstance] fillItemListWith:tmpArray];
+    [_recDelegate fillItemListWith:tmpArray];
     [self.topTableView reloadData];
     
 }

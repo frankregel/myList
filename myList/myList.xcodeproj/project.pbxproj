@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		7742FB1318B4E66700D041CA /* RecModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7742FB1218B4E66700D041CA /* RecModel.m */; };
 		7742FB1618B4EC9100D041CA /* RecDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7742FB1518B4EC9100D041CA /* RecDetailViewController.m */; };
+		775466B918C71BF50015BD63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 775466BB18C71BF50015BD63 /* Localizable.strings */; };
+		775466BE18C726540015BD63 /* altespapier.png in Resources */ = {isa = PBXBuildFile; fileRef = 775466C018C726540015BD63 /* altespapier.png */; };
+		77BAB0AB18C737AE0086DFC7 /* customTextfield.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BAB0AA18C737AE0086DFC7 /* customTextfield.m */; };
+		77BAB0AE18C74AB80086DFC7 /* BasePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BAB0AD18C74AB80086DFC7 /* BasePickerView.m */; };
 		77BE15AF18AE03340010B72D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77BE15AE18AE03340010B72D /* Foundation.framework */; };
 		77BE15B118AE03340010B72D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77BE15B018AE03340010B72D /* CoreGraphics.framework */; };
 		77BE15B318AE03340010B72D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77BE15B218AE03340010B72D /* UIKit.framework */; };
@@ -36,7 +40,6 @@
 		77C8C08D18BE3D0700D1293E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C8C08C18BE3D0700D1293E /* QuartzCore.framework */; };
 		84145D2118B8A41E00F940CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84145D2018B8A41E00F940CF /* MapKit.framework */; };
 		84145D2318B8A43200F940CF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84145D2218B8A43200F940CF /* CoreLocation.framework */; };
-		84145D2518B8AC5D00F940CF /* altespapier.png in Resources */ = {isa = PBXBuildFile; fileRef = 84145D2418B8AC5D00F940CF /* altespapier.png */; };
 		84145D2818B8AFAA00F940CF /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84145D2718B8AFAA00F940CF /* ItemViewController.m */; };
 		84145D2E18B8BB2F00F940CF /* MyItemDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84145D2D18B8BB2F00F940CF /* MyItemDelegate.m */; };
 		84A699FE18C4A0B200777006 /* EditSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A699FD18C4A0B200777006 /* EditSettingsView.m */; };
@@ -58,6 +61,16 @@
 		7742FB1218B4E66700D041CA /* RecModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecModel.m; path = Core/Model/RecModel.m; sourceTree = "<group>"; };
 		7742FB1418B4EC9100D041CA /* RecDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecDetailViewController.h; path = Lists/RecDetailViewController.h; sourceTree = "<group>"; };
 		7742FB1518B4EC9100D041CA /* RecDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecDetailViewController.m; path = Lists/RecDetailViewController.m; sourceTree = "<group>"; };
+		775466B718C71BE10015BD63 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		775466B818C71BE10015BD63 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		775466BA18C71BF50015BD63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		775466BD18C71C0F0015BD63 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		775466BF18C726540015BD63 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/altespapier.png; sourceTree = "<group>"; };
+		775466C118C7265A0015BD63 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = de.lproj/altespapier.png; sourceTree = "<group>"; };
+		77BAB0A918C737AE0086DFC7 /* customTextfield.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = customTextfield.h; path = View/customTextfield.h; sourceTree = "<group>"; };
+		77BAB0AA18C737AE0086DFC7 /* customTextfield.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = customTextfield.m; path = View/customTextfield.m; sourceTree = "<group>"; };
+		77BAB0AC18C74AB80086DFC7 /* BasePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasePickerView.h; path = View/BasePickerView.h; sourceTree = "<group>"; };
+		77BAB0AD18C74AB80086DFC7 /* BasePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasePickerView.m; path = View/BasePickerView.m; sourceTree = "<group>"; };
 		77BE15AB18AE03340010B72D /* myList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77BE15AE18AE03340010B72D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		77BE15B018AE03340010B72D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -101,7 +114,6 @@
 		77C8C08C18BE3D0700D1293E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		84145D2018B8A41E00F940CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		84145D2218B8A43200F940CF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		84145D2418B8AC5D00F940CF /* altespapier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = altespapier.png; sourceTree = "<group>"; };
 		84145D2618B8AFAA00F940CF /* ItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemViewController.h; path = Lists/ItemViewController.h; sourceTree = "<group>"; };
 		84145D2718B8AFAA00F940CF /* ItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemViewController.m; path = Lists/ItemViewController.m; sourceTree = "<group>"; };
 		84145D2C18B8BB2F00F940CF /* MyItemDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyItemDelegate.h; path = Lists/Manager/MyItemDelegate.h; sourceTree = "<group>"; };
@@ -193,6 +205,7 @@
 				77BE15B718AE03340010B72D /* InfoPlist.strings */,
 				77BE15BA18AE03340010B72D /* main.m */,
 				77BE15BC18AE03340010B72D /* myList-Prefix.pch */,
+				775466BB18C71BF50015BD63 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -290,6 +303,10 @@
 			children = (
 				77BE15F718AE41900010B72D /* TableHeaderView.h */,
 				77BE15F818AE41900010B72D /* TableHeaderView.m */,
+				77BAB0A918C737AE0086DFC7 /* customTextfield.h */,
+				77BAB0AA18C737AE0086DFC7 /* customTextfield.m */,
+				77BAB0AC18C74AB80086DFC7 /* BasePickerView.h */,
+				77BAB0AD18C74AB80086DFC7 /* BasePickerView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -330,7 +347,7 @@
 		84145D1F18B893F300F940CF /* images */ = {
 			isa = PBXGroup;
 			children = (
-				84145D2418B8AC5D00F940CF /* altespapier.png */,
+				775466C018C726540015BD63 /* altespapier.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -393,6 +410,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
 			);
 			mainGroup = 77BE15A218AE03340010B72D;
 			productRefGroup = 77BE15AC18AE03340010B72D /* Products */;
@@ -410,7 +428,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84145D2518B8AC5D00F940CF /* altespapier.png in Resources */,
+				775466B918C71BF50015BD63 /* Localizable.strings in Resources */,
+				775466BE18C726540015BD63 /* altespapier.png in Resources */,
 				84A69A0018C4A33200777006 /* countries.plist in Resources */,
 				77BE15B918AE03340010B72D /* InfoPlist.strings in Resources */,
 				77BE15C118AE03340010B72D /* Images.xcassets in Resources */,
@@ -432,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77BAB0AE18C74AB80086DFC7 /* BasePickerView.m in Sources */,
 				7742FB1618B4EC9100D041CA /* RecDetailViewController.m in Sources */,
 				77BE15F918AE41900010B72D /* TableHeaderView.m in Sources */,
 				7742FB1318B4E66700D041CA /* RecModel.m in Sources */,
@@ -444,6 +464,7 @@
 				77BE15FF18AE50D60010B72D /* ItemModel.m in Sources */,
 				77BE15FC18AE50AD0010B72D /* ListModel.m in Sources */,
 				77C8C08B18BE39F000D1293E /* EditMetaDataView.m in Sources */,
+				77BAB0AB18C737AE0086DFC7 /* customTextfield.m in Sources */,
 				77C8C08718BE294800D1293E /* EditViewController.m in Sources */,
 				84145D2E18B8BB2F00F940CF /* MyItemDelegate.m in Sources */,
 				77BE160518AE5D230010B72D /* DataSourceManager.m in Sources */,
@@ -473,10 +494,29 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		775466BB18C71BF50015BD63 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				775466BA18C71BF50015BD63 /* en */,
+				775466BD18C71C0F0015BD63 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		775466C018C726540015BD63 /* altespapier.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				775466BF18C726540015BD63 /* en */,
+				775466C118C7265A0015BD63 /* de */,
+			);
+			name = altespapier.png;
+			sourceTree = "<group>";
+		};
 		77BE15B718AE03340010B72D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				77BE15B818AE03340010B72D /* en */,
+				775466B718C71BE10015BD63 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -485,6 +525,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				77BE15D118AE03350010B72D /* en */,
+				775466B818C71BE10015BD63 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

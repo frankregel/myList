@@ -41,8 +41,7 @@
     UIButton *leftButton = [[UIButton alloc] initWithFrame:CGRectMake(5, 20, 90, 44)];
     [leftButton setTitle:buttonName forState:UIControlStateNormal];
     [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-#warning rausfinden wie man das auf links setzt
-    leftButton.titleLabel.textAlignment = NSTextAlignmentLeft;
+    [leftButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -40, 0, 0)];
     [self.view addSubview:leftButton];
 }
 

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BasePickerView.h"
 
-@interface EditMetaDataView : UIView <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface EditMetaDataView : UIView <BasePickerProtocol>
+
+- (void) setCountryString:(NSString *)countryString;
 
 @end
