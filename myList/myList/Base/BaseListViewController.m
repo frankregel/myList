@@ -58,6 +58,7 @@
         _myMapView.layer.borderWidth = 1;
         _myMapView.layer.borderColor = [[UIColor blackColor] CGColor];
         _myMapView.layer.cornerRadius = 5;
+        //_myMapView.region = MKCoordinateRegionMakeWithDistance(_myMapView.userLocation.coordinate, 400, 400);
         [self.view addSubview:_myMapView];
         
         
@@ -65,10 +66,28 @@
     return self;
 }
 
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    //Region 800 * 800 Meter um die Location
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 400, 400);
+    
+    //Annotation adden (Marke setzen)
+    MKPointAnnotation *marke = [MKPointAnnotation new];
+    marke.coordinate = userLocation.coordinate;
+    marke.title = @"Wo bin ich?";
+    marke.subtitle = @"genau hier!";
+    [_myMapView addAnnotation:marke];
+    
+    
+    [_myMapView setRegion:[_myMapView regionThatFits:region]animated:YES];
+    
+}
+
+#warning irgendwie geht das mit der map nicht richtig
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    //self.myMapView.delegate = self.myMapView;
 	
 }
 

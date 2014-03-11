@@ -10,16 +10,18 @@
 #import <QuartzCore/QuartzCore.h>
 #import "customTextfield.h"
 #import "BasePickerView.h"
+#import "EditSettingsView.h"
 
 @interface EditMetaDataView ()
 
 @property UITextField *title;
 @property UIButton *country;
 @property (nonatomic)  NSString *countryString;
-@property UIButton *region;
-@property UIButton *city;
+@property UITextField *region;
+@property UITextField *city;
 @property NSArray *countries;
 @property BasePickerView *basePicker;
+@property EditSettingsView *settingsView;
 
 
 @end
@@ -31,11 +33,12 @@
     self = [super initWithFrame:frame];
     if (self)
     {
+        //Sourcefile für die Länderliste angeben
         _countries = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"countries" ofType:@"plist"]];
         
         
         
-        [self addTextfieldWithName:@" neue Liste"];
+        [self addTextfieldWithName:NSLocalizedString(@"NewList", nil)];
         [self addCountryPicker];
         [self addRegionPicker];
         [self addCityPicker];
@@ -47,6 +50,10 @@
         _basePicker.empfaenger = self;
         
         //[_basePicker setEmpfaenger:self];
+        
+        //settings View aufrufen
+        _settingsView = [[EditSettingsView alloc]initWithFrame:CGRectMake(0, 270, 320, 200)];
+        [self addSubview:_settingsView];
         
     }
     return self;
@@ -86,7 +93,7 @@
 - (void)addCountryPicker
 {
     _country = [[UIButton alloc]initWithFrame:CGRectMake(0,70 , self.frame.size.width, 44)];
-    [_country setTitle:@"Land" forState:UIControlStateNormal];
+    [_country setTitle:NSLocalizedString(@"Country", nil) forState:UIControlStateNormal];
     [_country setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_country addTarget:self action:@selector(callCountryPicker) forControlEvents:UIControlEventTouchUpInside];
     _country.layer.borderColor = [[UIColor grayColor] CGColor];
@@ -98,9 +105,9 @@
 
 - (void)addRegionPicker
 {
-    _region = [[UIButton alloc]initWithFrame:CGRectMake(0,120  , self.frame.size.width, 44)];
-    [_region setTitle:@"Region" forState:UIControlStateNormal];
-    [_region setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    _region = [[customTextfield alloc]initWithFrame:CGRectMake(0,120  , self.frame.size.width, 44)];
+    [_region setTextColor:[UIColor blackColor]];
+    _region.placeholder = NSLocalizedString(@"Region", nil);
     _region.layer.borderColor = [[UIColor grayColor] CGColor];
     _region.layer.borderWidth = 1;
     _region.layer.cornerRadius = 2;
@@ -109,9 +116,9 @@
 
 - (void)addCityPicker
 {
-    _city = [[UIButton alloc]initWithFrame:CGRectMake(0,170 , self.frame.size.width, 44)];
-    [_city setTitle:@"Stadt" forState:UIControlStateNormal];
-    [_city setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    _city = [[customTextfield alloc]initWithFrame:CGRectMake(0,170 , self.frame.size.width, 44)];
+    [_city setTextColor:[UIColor grayColor]];
+    _city.placeholder = NSLocalizedString(@"City", nil);
     _city.layer.borderColor = [[UIColor grayColor] CGColor];
     _city.layer.borderWidth = 1;
     _city.layer.cornerRadius = 2;

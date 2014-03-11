@@ -6,7 +6,13 @@
   Copyright (c) 2014 Frank Regel. All rights reserved.
 */
 
-"RecTitle" = "recommendation";
+"RecTitle" = "Recommendation";
 "NewList" = "New List";
 "Done" = "Done";
 "Cancel" = "Cancel";
+"OK" = "OK";
+"Country" = "Country";
+"Region" = "Region";
+"City" = "City";
+"ButtonColor" = "Button Color";
+"BackgroundPicture" = "Background Picture";

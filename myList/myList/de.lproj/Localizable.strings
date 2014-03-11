@@ -10,3 +10,9 @@
 "NewList" = "Neue Liste";
 "Done" = "Fertig";
 "Cancel" = "Abbrechen";
+"OK" = "OK";
+"Country" = "Land";
+"Region" = "Region";
+"City" = "Stadt";
+"ButtonColor" = "Button Farbe";
+"BackgroundPicture" = "Hintergrund Bild";

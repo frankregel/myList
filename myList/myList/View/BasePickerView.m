@@ -34,13 +34,13 @@
         
         [self addSubview:_basePicker];
         UIButton *leftButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 0, 60, 44)];
-        [leftButton setTitle:@"Abbrechen" forState:UIControlStateNormal];
+        [leftButton setTitle:NSLocalizedString(@"Cancel", nil) forState:UIControlStateNormal];
         [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self addSubview:leftButton];
         [leftButton addTarget:self action:@selector(cancelValue) forControlEvents:UIControlEventTouchUpInside];
         UIButton *rightButton = [[UIButton alloc] initWithFrame:CGRectMake(self.bounds.size.width -70 , 0, 60, 44)];
         [rightButton addTarget:self action:@selector(confirmValue) forControlEvents:UIControlEventTouchUpInside];
-        [rightButton setTitle:@"OK" forState:UIControlStateNormal];
+        [rightButton setTitle:NSLocalizedString(@"OK", nil) forState:UIControlStateNormal];
         [rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self addSubview:rightButton];
 

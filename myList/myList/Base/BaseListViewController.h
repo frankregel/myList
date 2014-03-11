@@ -11,7 +11,7 @@
 #import <MapKit/MapKit.h>
 
 
-@interface BaseListViewController : UIViewController
+@interface BaseListViewController : UIViewController <MKMapViewDelegate>
 
 @property UITableView *topTableView;
 @property UITableView *midTableView;
