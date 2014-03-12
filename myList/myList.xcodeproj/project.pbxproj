@@ -11,6 +11,9 @@
 		7742FB1618B4EC9100D041CA /* RecDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7742FB1518B4EC9100D041CA /* RecDetailViewController.m */; };
 		775466B918C71BF50015BD63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 775466BB18C71BF50015BD63 /* Localizable.strings */; };
 		775466BE18C726540015BD63 /* altespapier.png in Resources */ = {isa = PBXBuildFile; fileRef = 775466C018C726540015BD63 /* altespapier.png */; };
+		77B8300D18D08DA9009CE701 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B8300C18D08DA9009CE701 /* libsqlite3.0.dylib */; };
+		77B8301018D08E64009CE701 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B8300F18D08E64009CE701 /* DatabaseManager.m */; };
+		77B8301318D09594009CE701 /* myList.db in Resources */ = {isa = PBXBuildFile; fileRef = 77B8301218D09594009CE701 /* myList.db */; };
 		77BAB0AB18C737AE0086DFC7 /* customTextfield.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BAB0AA18C737AE0086DFC7 /* customTextfield.m */; };
 		77BAB0AE18C74AB80086DFC7 /* BasePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BAB0AD18C74AB80086DFC7 /* BasePickerView.m */; };
 		77BE15AF18AE03340010B72D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77BE15AE18AE03340010B72D /* Foundation.framework */; };
@@ -69,6 +72,10 @@
 		775466BD18C71C0F0015BD63 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		775466BF18C726540015BD63 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/altespapier.png; sourceTree = "<group>"; };
 		775466C118C7265A0015BD63 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = de.lproj/altespapier.png; sourceTree = "<group>"; };
+		77B8300C18D08DA9009CE701 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		77B8300E18D08E64009CE701 /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseManager.h; path = Manager/DatabaseManager.h; sourceTree = "<group>"; };
+		77B8300F18D08E64009CE701 /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseManager.m; path = Manager/DatabaseManager.m; sourceTree = "<group>"; };
+		77B8301218D09594009CE701 /* myList.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = myList.db; path = DB/myList.db; sourceTree = "<group>"; };
 		77BAB0A918C737AE0086DFC7 /* customTextfield.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = customTextfield.h; path = View/customTextfield.h; sourceTree = "<group>"; };
 		77BAB0AA18C737AE0086DFC7 /* customTextfield.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = customTextfield.m; path = View/customTextfield.m; sourceTree = "<group>"; };
 		77BAB0AC18C74AB80086DFC7 /* BasePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasePickerView.h; path = View/BasePickerView.h; sourceTree = "<group>"; };
@@ -132,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77B8300D18D08DA9009CE701 /* libsqlite3.0.dylib in Frameworks */,
 				77C8C08D18BE3D0700D1293E /* QuartzCore.framework in Frameworks */,
 				84145D2318B8A43200F940CF /* CoreLocation.framework in Frameworks */,
 				84145D2118B8A41E00F940CF /* MapKit.framework in Frameworks */,
@@ -154,6 +162,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77B8301118D09579009CE701 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				77B8301218D09594009CE701 /* myList.db */,
+			);
+			name = DB;
+			sourceTree = "<group>";
+		};
 		77BE15A218AE03340010B72D = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +192,7 @@
 		77BE15AD18AE03340010B72D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				77B8300C18D08DA9009CE701 /* libsqlite3.0.dylib */,
 				77C8C08C18BE3D0700D1293E /* QuartzCore.framework */,
 				84145D2218B8A43200F940CF /* CoreLocation.framework */,
 				84145D2018B8A41E00F940CF /* MapKit.framework */,
@@ -190,6 +207,7 @@
 		77BE15B418AE03340010B72D /* myList */ = {
 			isa = PBXGroup;
 			children = (
+				77B8301118D09579009CE701 /* DB */,
 				84145D1F18B893F300F940CF /* images */,
 				77BE15E218AE12460010B72D /* Base */,
 				77BE15E118AE10F90010B72D /* Lists */,
@@ -270,6 +288,8 @@
 			children = (
 				77BE160318AE5D230010B72D /* DataSourceManager.h */,
 				77BE160418AE5D230010B72D /* DataSourceManager.m */,
+				77B8300E18D08E64009CE701 /* DatabaseManager.h */,
+				77B8300F18D08E64009CE701 /* DatabaseManager.m */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -441,6 +461,7 @@
 				84A69A0018C4A33200777006 /* countries.plist in Resources */,
 				77BE15B918AE03340010B72D /* InfoPlist.strings in Resources */,
 				77BE15C118AE03340010B72D /* Images.xcassets in Resources */,
+				77B8301318D09594009CE701 /* myList.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +488,7 @@
 				77BE15F418AE2D1A0010B72D /* MyRecommendedListDelegate.m in Sources */,
 				77BE15E518AE128A0010B72D /* BaseListViewController.m in Sources */,
 				77BE15E818AE12B10010B72D /* MyListViewController.m in Sources */,
+				77B8301018D08E64009CE701 /* DatabaseManager.m in Sources */,
 				84145D2818B8AFAA00F940CF /* ItemViewController.m in Sources */,
 				77BE15EB18AE12D50010B72D /* ListDetailViewController.m in Sources */,
 				77BE15FF18AE50D60010B72D /* ItemModel.m in Sources */,

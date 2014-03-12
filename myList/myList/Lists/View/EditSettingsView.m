@@ -18,9 +18,9 @@
 @property UILabel *cameraLabel;
 @property UIView *color;
 @property UIView *camera;
-@property UIImageView *cameraIcon;
 @property UIImage *camImage;
 @property UIImageView *colorView;
+@property UIButton *camButton;
 
 
 @end
@@ -60,9 +60,11 @@
 
 - (void)addCamLabel
 {
-    _camera = [[UIView alloc]initWithFrame:CGRectMake(0, 50, 310, 44)];
-    _cameraIcon = [[UIImageView alloc]initWithFrame:CGRectMake(265, 5, 34, 34)];
-#warning hier noch die Cam einfügen als System Item
+    _camera = [[UIView alloc] initWithFrame:CGRectMake(0, 50, 310, 44)];
+    _camButton = [[UIButton alloc] initWithFrame:CGRectMake(265, 0, 44, 44)];
+    [_camButton addTarget:self action:@selector(didCallCam) forControlEvents:UIControlEventTouchUpInside];
+    _camButton.backgroundColor = [UIColor greenColor];
+#warning hier noch image einbauen
     _cameraLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, 200, 44)];
     _cameraLabel.text = NSLocalizedString(@"BackgroundPicture", nil);
     
@@ -70,7 +72,7 @@
     _camera.layer.borderWidth = 1;
     _camera.layer.cornerRadius = 2;
     
-    [_camera addSubview:_cameraIcon];
+    [_camera addSubview:_camButton];
     [_camera addSubview:_cameraLabel];
     
     [self addSubview:_camera];
@@ -79,7 +81,7 @@
 
 - (void)ChangeColorTo:(UIColor *)newColor
 {
-#warning colorpicker bauen
+#warning colorpicker bauen UICollectionView
 }
 
 - (void)didCallCam

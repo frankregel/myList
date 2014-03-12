@@ -27,13 +27,12 @@
         [self.topTableView removeFromSuperview];
         [self.midTableView removeFromSuperview];
         NSLog(@"%s", __PRETTY_FUNCTION__);
+#warning Cam in eigene Klasse umbetten
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
         {
             _imagePickerController = [UIImagePickerController new];
             _imagePickerController.delegate = self;
             _imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-            
-            
             
             [self addPhotoButtonItem];
         }
@@ -74,8 +73,6 @@
     //    [self.view addSubview:backView];
     
     NSLog(@"%@", info);
-    
-    
 }
 
 #pragma mark - System

@@ -7,6 +7,7 @@
 //
 
 #import "DataSourceManager.h"
+#import "DatabaseManager.h"
 #import "ListModel.h"
 #import "RecModel.h"
 #import "ItemModel.h"
@@ -31,6 +32,7 @@
     if (self)
     {
         [self setTestData];
+        
     }
     return self;
 }
@@ -84,6 +86,10 @@
     }
     
     [firstRec setRecItems:tmpArray];
+    
+    DatabaseManager *manager = [DatabaseManager new];
+    [manager getItemsFromDatabaseWithName:@"myList.db" fromTable:@"items" andConstraint:@""];
+    
     
     
 }

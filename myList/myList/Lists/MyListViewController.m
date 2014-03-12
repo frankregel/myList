@@ -32,6 +32,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
+
         NSLog(@"%s", __PRETTY_FUNCTION__);
         //BarButtonItems
         UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(didCallNewList)];
@@ -103,6 +104,10 @@
     NSArray *recItems = [[DataSourceManager useDataMethod] getRecList];
     [myList fillListWith:listItems];
     [myRecList fillRecListWith:recItems];
+    
+#warning rumexperimentieren wegen der Farbe
+    self.navigationController.navigationBar.barTintColor = [UIColor greenColor];
+    self.navigationController.navigationBar.translucent = NO;
    
     
     //[[MyListDelegate sharedInstance] setListArray:[[DataSourceManager sharedInstance] getLists]];
