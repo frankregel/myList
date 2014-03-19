@@ -10,6 +10,11 @@
 
 @interface ItemModel : NSObject
 
+
+- (void)setItemID:(NSString *)itemID;
+
+- (NSString *)getItemID;
+
 - (void)setItemName:(NSString *)itemName;
 
 - (NSString *)getItemName;

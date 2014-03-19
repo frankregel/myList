@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Items" syncable="YES">
+        <attribute name="isrecitem" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="itemdescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemimage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemrecommendedby" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemyear" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Lists" syncable="YES">
+        <attribute name="backgroundimage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="buttoncolor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="listitems" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="listname" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Items" positionX="-54" positionY="-9" width="128" height="28"/>
+        <element name="Lists" positionX="-252" positionY="-234" width="72" height="28"/>
+    </elements>
+</model>

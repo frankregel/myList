@@ -10,6 +10,7 @@
 
 @interface ItemModel ()
 
+@property (nonatomic) NSString *itemID;
 @property (nonatomic) NSString *itemName;
 @property (nonatomic) NSString *itemDescription;
 @property (nonatomic) NSDate *itemYear;
@@ -22,6 +23,15 @@
 
 @implementation ItemModel
 
+- (void)setItemID:(NSString *)itemID
+{
+    _itemID = itemID;
+}
+
+- (NSString *)getItemID
+{
+    return _itemID;
+}
 
 - (void)setItemName:(NSString *)itemName
 {

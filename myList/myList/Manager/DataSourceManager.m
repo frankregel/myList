@@ -22,6 +22,8 @@
 @property NSString *timeStampString;
 @property NSDictionary *tmpDict;
 
+@property DatabaseManager *manager;
+
 @end
 
 @implementation DataSourceManager
@@ -68,7 +70,10 @@
     ItemModel *fourthItem = [ItemModel new];
     [fourthItem setItemName:@"4th Item"];
     
-    _itemArray = @[firstItem,secondItem,thirdItem,fourthItem];
+    //_itemArray = @[firstItem,secondItem,thirdItem,fourthItem];
+    
+    _manager = [DatabaseManager new];
+    _itemArray = [_manager getItemsFromDatabaseWithName:@"myList.db" fromTable:@"items" andConstraint:@""];
     
     [firstList setListItems:_itemArray];
     [secondList setListItems:@[secondItem,thirdItem,fourthItem]];
@@ -87,8 +92,9 @@
     
     [firstRec setRecItems:tmpArray];
     
-    DatabaseManager *manager = [DatabaseManager new];
-    [manager getItemsFromDatabaseWithName:@"myList.db" fromTable:@"items" andConstraint:@""];
+
+    NSLog(@"item1: %@", [_itemArray objectAtIndex:0]);
+    
     
     
     

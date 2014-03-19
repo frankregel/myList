@@ -49,6 +49,7 @@
 		84A69A0018C4A33200777006 /* countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84A699FF18C4A33200777006 /* countries.plist */; };
 		84CF0D2118CF0CAC00A2FEB2 /* defaultcol.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CF0D2018CF0CAC00A2FEB2 /* defaultcol.png */; };
 		84CF0D2518CF120000A2FEB2 /* color.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CF0D2418CF120000A2FEB2 /* color.png */; };
+		84F36D0618D47E7E0078F2A8 /* myDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84F36D0418D47E7E0078F2A8 /* myDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		84A699FF18C4A33200777006 /* countries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = countries.plist; sourceTree = "<group>"; };
 		84CF0D2018CF0CAC00A2FEB2 /* defaultcol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultcol.png; sourceTree = "<group>"; };
 		84CF0D2418CF120000A2FEB2 /* color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color.png; sourceTree = "<group>"; };
+		84F36D0518D47E7E0078F2A8 /* myDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				77B8301218D09594009CE701 /* myList.db */,
+				84F36D0418D47E7E0078F2A8 /* myDataModel.xcdatamodeld */,
 			);
 			name = DB;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				77BE15BF18AE03340010B72D /* AppDelegate.m in Sources */,
 				77BE15F418AE2D1A0010B72D /* MyRecommendedListDelegate.m in Sources */,
 				77BE15E518AE128A0010B72D /* BaseListViewController.m in Sources */,
+				84F36D0618D47E7E0078F2A8 /* myDataModel.xcdatamodeld in Sources */,
 				77BE15E818AE12B10010B72D /* MyListViewController.m in Sources */,
 				77B8301018D08E64009CE701 /* DatabaseManager.m in Sources */,
 				84145D2818B8AFAA00F940CF /* ItemViewController.m in Sources */,
@@ -730,6 +734,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		84F36D0418D47E7E0078F2A8 /* myDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				84F36D0518D47E7E0078F2A8 /* myDataModel.xcdatamodel */,
+			);
+			currentVersion = 84F36D0518D47E7E0078F2A8 /* myDataModel.xcdatamodel */;
+			name = myDataModel.xcdatamodeld;
+			path = DB/myDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 77BE15A318AE03340010B72D /* Project object */;
 }
