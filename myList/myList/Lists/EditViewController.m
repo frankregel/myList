@@ -8,9 +8,14 @@
 
 #import "EditViewController.h"
 #import "EditMetaDataView.h"
+#import "EditSettingsView.h"
+#import "ListModel.h"
+#import "DataSourceManager.h"
 
 @interface EditViewController ()
-
+@property ListModel *editList;
+@property EditMetaDataView *metaDataView;
+@property EditSettingsView *settingsDataView;
 
 @end
 
@@ -22,13 +27,16 @@
     self = [super init];
     if (self)
     {
+        
+        _editList = [ListModel new];
+        
         [self addTitleLabelWithName:viewName];
         [self addLeftButtonWithName:leftButtonName];
         [self addRightButtonWithName:rightButtonName];
         
-        EditMetaDataView *editMetaData = [[EditMetaDataView alloc] initWithFrame:CGRectMake(5, 70, self.view.frame.size.width -10, 260)];
+        _metaDataView = [[EditMetaDataView alloc] initWithFrame:CGRectMake(5, 70, self.view.frame.size.width -10, 260)];
         
-        [self.view addSubview:editMetaData];
+        [self.view addSubview:_metaDataView];
     }
     return self;
 }
@@ -42,6 +50,7 @@
     [leftButton setTitle:buttonName forState:UIControlStateNormal];
     [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [leftButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -40, 0, 0)];
+    [leftButton addTarget:self action:@selector(didTouchLeftButton) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:leftButton];
 }
 
@@ -69,11 +78,29 @@
 #pragma mark - actions
 - (void)didTouchRightButton
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^(void){
+        NSLog(@"Handler");
+    }];
 }
 
 - (void)didTouchLeftButton
 {
+    ListModel *transferModel = [ListModel new];
+    [transferModel setListName:_metaDataView.title.text];
+    [transferModel setCountry:_metaDataView.countryString];
+    [transferModel setRegionName:_metaDataView.region.text];
+    [transferModel setCityName:_metaDataView.city.text];
+#warning dummies, weil noch nicht implementiert!
+    [transferModel setButtonColor:@"clearColor"];
+    [transferModel setBackGroundImageString:@""];
+    
+    //[[DataSourceManager useDataMethod]addList:transferModel];
+    
+    [self dismissViewControllerAnimated:YES completion:^(void){
+        [[DataSourceManager useDataMethod]addList:transferModel];
+    }];
+    
+    
     NSLog(@"Noch nicht implementiert!");
 }
 - (void)viewDidLoad

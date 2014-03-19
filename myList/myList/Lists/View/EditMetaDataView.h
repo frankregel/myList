@@ -11,6 +11,12 @@
 
 @interface EditMetaDataView : UIView <BasePickerProtocol>
 
+@property UITextField *title;
+@property (nonatomic)  NSString *countryString;
+@property UITextField *region;
+@property UITextField *city;
+
+
 - (void) setCountryString:(NSString *)countryString;
 
 @end

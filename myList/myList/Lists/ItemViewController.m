@@ -83,9 +83,14 @@
     MyItemDelegate *myItems = [MyItemDelegate myItemInstance];
     
     NSArray *items = [[DataSourceManager useDataMethod] getLists];
-    NSArray *detail = [items objectAtIndex:0];
+    if (items.count >0)
+    {
+        NSArray *detail = [items objectAtIndex:0];
+        [myItems fillItemListWith:detail];
+    }
     
-    [myItems fillItemListWith:detail];
+    
+    
 
 }
 

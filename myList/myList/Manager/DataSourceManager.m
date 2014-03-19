@@ -28,11 +28,20 @@
 
 @implementation DataSourceManager
 
+#define dbList @"myList.db"
+#define tableListItems @"items"
+#define tableLists @"lists"
+#define dbRec @"myRec.db"
+
 - (id)init
 {
     self = [super init];
     if (self)
     {
+        _manager = [DatabaseManager new];
+        //_listArray = [_manager getListsFromDatabaseWithName:dbList fromTable:tableLists andConstraint:@""];
+        //_itemArray = [_manager getItemsFromDatabaseWithName:dbList fromTable:tableListItems andConstraint:@""];
+        
         [self setTestData];
         
     }
@@ -72,8 +81,8 @@
     
     //_itemArray = @[firstItem,secondItem,thirdItem,fourthItem];
     
-    _manager = [DatabaseManager new];
-    _itemArray = [_manager getItemsFromDatabaseWithName:@"myList.db" fromTable:@"items" andConstraint:@""];
+    
+    _itemArray = [_manager getItemsFromDatabaseWithName:dbList fromTable:tableListItems andConstraint:@""];
     
     [firstList setListItems:_itemArray];
     [secondList setListItems:@[secondItem,thirdItem,fourthItem]];
@@ -113,6 +122,16 @@
 - (NSArray *)getItems
 {
     return _itemArray;
+}
+
+- (void)addItems:(NSArray *)itemArray
+{
+    [_manager addItemsToDatabaseWithName:dbList inTable:tableListItems whithItem:itemArray];
+}
+
+- (void)addList:(ListModel *)newList
+{
+    [_manager addListToDatabaseWithName:dbList inTable:tableLists whithList:newList];
 }
 
 #pragma mark - Shared Instance aka Singleton

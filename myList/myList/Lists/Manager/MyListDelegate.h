@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "ListModel.h"
 
+typedef void (^CallbackHandler)(ListModel *selectedList);
+
 @protocol MyListCallBack <NSObject>
 
 - (void)didSelectList:(ListModel *)selectedList;
@@ -21,6 +23,8 @@
 
 + (MyListDelegate *)myListInstance;
 - (void)fillListWith:(NSArray *)listArray;
+
+- (void)fillListWith:(NSArray *)listArray andCallbackHandler:(CallbackHandler)handler;
 
 @end
 

@@ -11,6 +11,7 @@
 @interface MyItemDelegate ()
 @property (nonatomic) NSArray *itemArray;
 @property (nonatomic) NSArray *listArray;
+@property (strong) CompletionTest compTest;
 
 
 @end
@@ -33,13 +34,27 @@
     _itemArray = itemArray;
 }
 
+- (void)fillItemListWith:(NSArray *)itemArray andHandler:(CompletionTest)CompTest
+{
+    _itemArray = itemArray;
+    _compTest = CompTest;
+    
+}
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (_myItemViewController)
+//    if (_myItemViewController)
+//    {
+//        ItemModel *selectedItem = [_itemArray objectAtIndex:indexPath.row];
+//        [_myItemViewController didSelectItem:selectedItem];
+//    }
+    
+    if (_compTest)
     {
         ItemModel *selectedItem = [_itemArray objectAtIndex:indexPath.row];
-        [_myItemViewController didSelectItem:selectedItem];
+        _compTest(selectedItem);
     }
 }
 

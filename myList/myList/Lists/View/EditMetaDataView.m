@@ -14,11 +14,7 @@
 
 @interface EditMetaDataView ()
 
-@property UITextField *title;
 @property UIButton *country;
-@property (nonatomic)  NSString *countryString;
-@property UITextField *region;
-@property UITextField *city;
 @property NSArray *countries;
 @property BasePickerView *basePicker;
 @property EditSettingsView *settingsView;

@@ -10,8 +10,23 @@
 
 @interface ListModel : NSObject
 
+- (void)setListID:(NSInteger)listID;
+
+- (NSInteger)getListID;
 
 - (void)setListName:(NSString *)listName;
+
+- (void)setCountry:(NSString *)countryName;
+
+- (NSString *)getCountryName;
+
+- (void)setRegionName:(NSString *)regionName;
+
+- (NSString *)getRegionName;
+
+- (void)setCityName:(NSString *)cityName;
+
+- (NSString *)getCityName;
 
 - (NSString *)getListName;
 
@@ -23,9 +38,9 @@
 
 - (BOOL)getIsPublic;
 
-- (void)setButtonColor:(UIColor *)buttonColor;
+- (void)setButtonColor:(NSString *)buttonColor;
 
-- (UIColor *)getButtonColor;
+- (NSString *)getButtonColor;
 
 - (void)setBackGroundImageString:(NSString *)backGroundImageString;
 

@@ -7,15 +7,17 @@
         <attribute name="itemname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="itemrecommendedby" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="itemyear" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="listrelation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lists" inverseName="itemrelation" inverseEntity="Lists" syncable="YES"/>
     </entity>
     <entity name="Lists" syncable="YES">
         <attribute name="backgroundimage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="buttoncolor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="listitems" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="listname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="itemrelation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Items" inverseName="listrelation" inverseEntity="Items" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Items" positionX="-54" positionY="-9" width="128" height="28"/>
-        <element name="Lists" positionX="-252" positionY="-234" width="72" height="28"/>
+        <element name="Items" positionX="-54" positionY="-9" width="128" height="148"/>
+        <element name="Lists" positionX="-216" positionY="-162" width="153" height="118"/>
     </elements>
 </model>

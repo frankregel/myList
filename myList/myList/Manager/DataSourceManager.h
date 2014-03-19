@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class ListModel;
 
 @interface DataSourceManager : NSObject
 
@@ -21,5 +21,7 @@
 - (NSMutableArray *)getPicsFromWanWith:(NSString *)stringForKey inPostArray:(NSArray *)thumbNailArray;
 - (void)saveItemToFileWith:(NSString *)newItem andTimeStamp:(NSString *)uniqueTimeStamp;
 - (NSDictionary *)loadListDict;
+- (void)addItems:(NSArray *)itemArray;
+- (void)addList:(ListModel *)newList;
 
 @end

@@ -21,6 +21,7 @@
 @property ListDetailViewController *selectedListController;
 @property RecDetailViewController *selectedRecController;
 @property EditViewController *editViewController;
+@property (strong) CallbackHandler handler;
 
 
 @end
@@ -34,6 +35,9 @@
     {
 
         NSLog(@"%s", __PRETTY_FUNCTION__);
+
+        
+        
         //BarButtonItems
         UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(didCallNewList)];
         self.navigationItem.rightBarButtonItem = addButton;
@@ -102,7 +106,14 @@
     
     NSArray *listItems = [[DataSourceManager useDataMethod] getLists];
     NSArray *recItems = [[DataSourceManager useDataMethod] getRecList];
-    [myList fillListWith:listItems];
+    //[myList fillListWith:listItems];
+    
+    //Benötigte Blocks
+    
+    _handler = [self getHandlerForListModel];
+    
+    [myList fillListWith:listItems andCallbackHandler:_handler];
+    
     [myRecList fillRecListWith:recItems];
     
 #warning rumexperimentieren wegen der Farbe
@@ -113,6 +124,17 @@
     //[[MyListDelegate sharedInstance] setListArray:[[DataSourceManager sharedInstance] getLists]];
     
 	// Do any additional setup after loading the view.
+}
+
+#pragma mark Callbackhandler definieren
+- (CallbackHandler)getHandlerForListModel
+{
+    __block CallbackHandler returnHandler = ^(ListModel *inlist)
+    {
+        [self callListDetailViewControllerWith:inlist];
+    };
+    
+    return returnHandler;
 }
 
 - (void)didReceiveMemoryWarning

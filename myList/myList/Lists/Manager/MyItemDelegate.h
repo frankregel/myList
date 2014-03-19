@@ -10,6 +10,8 @@
 #import "ItemModel.h"
 #import "ListModel.h"
 
+typedef void (^CompletionTest) (ItemModel *selectedItem);
+
 @protocol MyItemCallBack <NSObject>
 
 - (void)didSelectItem:(ItemModel *)selectedItem;
@@ -22,6 +24,7 @@
 
 + (MyItemDelegate *)myItemInstance;
 - (void)fillItemListWith:(NSArray *)itemArray;
+- (void)fillItemListWith:(NSArray *)itemArray andHandler:(CompletionTest)CompTest;
 
 
 @end

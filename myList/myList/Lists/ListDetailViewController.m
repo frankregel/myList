@@ -56,11 +56,23 @@
 
 - (void)setSelectedListWith:(ListModel *)selectedList
 {
+    
+    
     _selectedList = selectedList;
     self.title = [_selectedList getListName];
     NSArray *tmpArray = [_selectedList getListItems];
+    
     //Daten übertragen
-    [_listDelegate fillItemListWith:tmpArray];
+    //[_listDelegate fillItemListWith:tmpArray];
+    
+    
+    [_listDelegate fillItemListWith:tmpArray andHandler:^(ItemModel *selectedItem){
+        NSLog(@"didSelect von ListDetailViewController");
+        [_selectedItemController setSelectedItemWith:selectedItem];
+        [self.navigationController pushViewController:_selectedItemController animated:YES];
+    }];
+    
+    
     [self.topTableView reloadData];
     NSLog(@"%lu", (unsigned long)[tmpArray count]);
 }

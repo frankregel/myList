@@ -10,7 +10,7 @@
 
 @interface MyListDelegate ()
 @property (nonatomic)  NSArray *listArray;
-
+@property (strong) CallbackHandler handler;
 @end
 
 @implementation MyListDelegate
@@ -32,14 +32,27 @@
     _listArray = listArray;
 }
 
+- (void)fillListWith:(NSArray *)listArray andCallbackHandler:(CallbackHandler)handler
+{
+    _listArray = listArray;
+    _handler = handler;
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (_myListViewController)
+//    if (_myListViewController)
+//    {
+//        ListModel *selectedList = [_listArray objectAtIndex:indexPath.row];
+//        [_myListViewController didSelectList:selectedList];
+//    }
+    
+    if (_handler)
     {
         ListModel *selectedList = [_listArray objectAtIndex:indexPath.row];
-        [_myListViewController didSelectList:selectedList];
+        _handler(selectedList);
     }
+    
 }
 //Tabelle befüllen
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
