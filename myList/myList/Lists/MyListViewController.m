@@ -15,6 +15,7 @@
 #import "DataSourceManager.h"
 #import "ListModel.h"
 #import "RecModel.h"
+#import "CoreDataManager.h"
 
 @interface MyListViewController () <MyListCallBack, MyRecListCallBack>
 
@@ -104,7 +105,11 @@
     MyListDelegate *myList = [MyListDelegate myListInstance];
     MyRecommendedListDelegate *myRecList = [MyRecommendedListDelegate myRecListInstance];
     
-    NSArray *listItems = [[DataSourceManager useDataMethod] getLists];
+    
+    
+    NSArray *listItems = [[CoreDataManager coreDataInstance] loadListArray];
+    
+//    NSArray *listItems = [[DataSourceManager useDataMethod] getLists];
     NSArray *recItems = [[DataSourceManager useDataMethod] getRecList];
     //[myList fillListWith:listItems];
     
@@ -126,12 +131,27 @@
 	// Do any additional setup after loading the view.
 }
 
+#pragma  mark - dispatch experimentieren
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+//    dispatch_time_t appearTime = dispatch_time(DISPATCH_TIME_NOW, 2.0 * NSEC_PER_SEC);
+//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+//    
+//    dispatch_after(appearTime, queue, ^(void){
+//        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"myList" message:@"Welcome to myList" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+//        NSLog(@"dispatcher");
+//        //[alertView show];
+//    });
+}
+
 #pragma mark Callbackhandler definieren
 - (CallbackHandler)getHandlerForListModel
 {
-    __block CallbackHandler returnHandler = ^(ListModel *inlist)
+    __block CallbackHandler returnHandler = ^(Lists *inlist)
     {
-        [self callListDetailViewControllerWith:inlist];
+#warning hier weitermachen
+        //[self callListDetailViewControllerWith:inlist];
     };
     
     return returnHandler;

@@ -11,6 +11,11 @@
 		7742FB1618B4EC9100D041CA /* RecDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7742FB1518B4EC9100D041CA /* RecDetailViewController.m */; };
 		775466B918C71BF50015BD63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 775466BB18C71BF50015BD63 /* Localizable.strings */; };
 		775466BE18C726540015BD63 /* altespapier.png in Resources */ = {isa = PBXBuildFile; fileRef = 775466C018C726540015BD63 /* altespapier.png */; };
+		775F49F018E2D39A00B79FEF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775F49EF18E2D39A00B79FEF /* CoreData.framework */; };
+		775F4A3418E2D6BA00B79FEF /* Items.m in Sources */ = {isa = PBXBuildFile; fileRef = 775F4A3318E2D6BA00B79FEF /* Items.m */; };
+		775F4A3718E2D6BB00B79FEF /* Lists.m in Sources */ = {isa = PBXBuildFile; fileRef = 775F4A3618E2D6BB00B79FEF /* Lists.m */; };
+		775F4A3B18E2D7C900B79FEF /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 775F4A3A18E2D7C900B79FEF /* CoreDataManager.m */; };
+		775F4A3E18E2F65F00B79FEF /* Lists+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 775F4A3D18E2F65F00B79FEF /* Lists+Additions.m */; };
 		77B8300D18D08DA9009CE701 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B8300C18D08DA9009CE701 /* libsqlite3.0.dylib */; };
 		77B8301018D08E64009CE701 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B8300F18D08E64009CE701 /* DatabaseManager.m */; };
 		77B8301318D09594009CE701 /* myList.db in Resources */ = {isa = PBXBuildFile; fileRef = 77B8301218D09594009CE701 /* myList.db */; };
@@ -73,6 +78,15 @@
 		775466BD18C71C0F0015BD63 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		775466BF18C726540015BD63 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/altespapier.png; sourceTree = "<group>"; };
 		775466C118C7265A0015BD63 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = de.lproj/altespapier.png; sourceTree = "<group>"; };
+		775F49EF18E2D39A00B79FEF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		775F4A3218E2D6BA00B79FEF /* Items.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Items.h; path = DB/Model/Items.h; sourceTree = "<group>"; };
+		775F4A3318E2D6BA00B79FEF /* Items.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Items.m; path = DB/Model/Items.m; sourceTree = "<group>"; };
+		775F4A3518E2D6BB00B79FEF /* Lists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lists.h; path = DB/Model/Lists.h; sourceTree = "<group>"; };
+		775F4A3618E2D6BB00B79FEF /* Lists.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lists.m; path = DB/Model/Lists.m; sourceTree = "<group>"; };
+		775F4A3918E2D7C900B79FEF /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataManager.h; path = Manager/CoreDataManager.h; sourceTree = "<group>"; };
+		775F4A3A18E2D7C900B79FEF /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataManager.m; path = Manager/CoreDataManager.m; sourceTree = "<group>"; };
+		775F4A3C18E2F65F00B79FEF /* Lists+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Lists+Additions.h"; path = "Core/Model/Lists+Additions.h"; sourceTree = "<group>"; };
+		775F4A3D18E2F65F00B79FEF /* Lists+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Lists+Additions.m"; path = "Core/Model/Lists+Additions.m"; sourceTree = "<group>"; };
 		77B8300C18D08DA9009CE701 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		77B8300E18D08E64009CE701 /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseManager.h; path = Manager/DatabaseManager.h; sourceTree = "<group>"; };
 		77B8300F18D08E64009CE701 /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseManager.m; path = Manager/DatabaseManager.m; sourceTree = "<group>"; };
@@ -141,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				775F49F018E2D39A00B79FEF /* CoreData.framework in Frameworks */,
 				77B8300D18D08DA9009CE701 /* libsqlite3.0.dylib in Frameworks */,
 				77C8C08D18BE3D0700D1293E /* QuartzCore.framework in Frameworks */,
 				84145D2318B8A43200F940CF /* CoreLocation.framework in Frameworks */,
@@ -164,9 +179,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		775F4A3818E2D6C700B79FEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				775F4A3518E2D6BB00B79FEF /* Lists.h */,
+				775F4A3618E2D6BB00B79FEF /* Lists.m */,
+				775F4A3218E2D6BA00B79FEF /* Items.h */,
+				775F4A3318E2D6BA00B79FEF /* Items.m */,
+				775F4A3C18E2F65F00B79FEF /* Lists+Additions.h */,
+				775F4A3D18E2F65F00B79FEF /* Lists+Additions.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		77B8301118D09579009CE701 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				775F4A3818E2D6C700B79FEF /* Model */,
 				77B8301218D09594009CE701 /* myList.db */,
 				84F36D0418D47E7E0078F2A8 /* myDataModel.xcdatamodeld */,
 			);
@@ -195,6 +224,7 @@
 		77BE15AD18AE03340010B72D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				775F49EF18E2D39A00B79FEF /* CoreData.framework */,
 				77B8300C18D08DA9009CE701 /* libsqlite3.0.dylib */,
 				77C8C08C18BE3D0700D1293E /* QuartzCore.framework */,
 				84145D2218B8A43200F940CF /* CoreLocation.framework */,
@@ -293,6 +323,8 @@
 				77BE160418AE5D230010B72D /* DataSourceManager.m */,
 				77B8300E18D08E64009CE701 /* DatabaseManager.h */,
 				77B8300F18D08E64009CE701 /* DatabaseManager.m */,
+				775F4A3918E2D7C900B79FEF /* CoreDataManager.h */,
+				775F4A3A18E2D7C900B79FEF /* CoreDataManager.m */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -488,13 +520,17 @@
 				77BE15F918AE41900010B72D /* TableHeaderView.m in Sources */,
 				7742FB1318B4E66700D041CA /* RecModel.m in Sources */,
 				77BE15BF18AE03340010B72D /* AppDelegate.m in Sources */,
+				775F4A3E18E2F65F00B79FEF /* Lists+Additions.m in Sources */,
 				77BE15F418AE2D1A0010B72D /* MyRecommendedListDelegate.m in Sources */,
 				77BE15E518AE128A0010B72D /* BaseListViewController.m in Sources */,
+				775F4A3718E2D6BB00B79FEF /* Lists.m in Sources */,
 				84F36D0618D47E7E0078F2A8 /* myDataModel.xcdatamodeld in Sources */,
 				77BE15E818AE12B10010B72D /* MyListViewController.m in Sources */,
 				77B8301018D08E64009CE701 /* DatabaseManager.m in Sources */,
 				84145D2818B8AFAA00F940CF /* ItemViewController.m in Sources */,
 				77BE15EB18AE12D50010B72D /* ListDetailViewController.m in Sources */,
+				775F4A3418E2D6BA00B79FEF /* Items.m in Sources */,
+				775F4A3B18E2D7C900B79FEF /* CoreDataManager.m in Sources */,
 				77BE15FF18AE50D60010B72D /* ItemModel.m in Sources */,
 				77BE15FC18AE50AD0010B72D /* ListModel.m in Sources */,
 				77C8C08B18BE39F000D1293E /* EditMetaDataView.m in Sources */,

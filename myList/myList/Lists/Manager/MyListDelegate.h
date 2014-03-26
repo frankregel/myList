@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ListModel.h"
+#import "Lists.h"
 
-typedef void (^CallbackHandler)(ListModel *selectedList);
+typedef void (^CallbackHandler)(Lists *selectedList);
 
 @protocol MyListCallBack <NSObject>
 
-- (void)didSelectList:(ListModel *)selectedList;
+- (void)didSelectList:(Lists *)selectedList;
 
 @end
 

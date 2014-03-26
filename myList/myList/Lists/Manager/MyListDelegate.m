@@ -7,6 +7,7 @@
 //
 
 #import "MyListDelegate.h"
+#import "Lists.h"
 
 @interface MyListDelegate ()
 @property (nonatomic)  NSArray *listArray;
@@ -49,7 +50,7 @@
     
     if (_handler)
     {
-        ListModel *selectedList = [_listArray objectAtIndex:indexPath.row];
+        Lists *selectedList = [_listArray objectAtIndex:indexPath.row];
         _handler(selectedList);
     }
     
@@ -61,8 +62,8 @@
     UITableViewCell *cell = [UITableViewCell new];
     //wenn die Zelle nicht durchsichtig ist, kann man den Hintergrunf nicht sehen!
     cell.backgroundColor = [UIColor clearColor];
-    ListModel *selectedList = [_listArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [selectedList getListName];
+    Lists *selectedList = [_listArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = selectedList.listname;
     return cell;
 }
 
